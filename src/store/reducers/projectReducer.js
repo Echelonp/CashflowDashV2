@@ -17,8 +17,9 @@ const initState = {
   cashInit: 7262,
   cashIncome: [
     {
-      id: 1,
+      id: 101,
       name: "เงินรับรายได้ (สนญ.)",
+      baseChart: true,
       cash: {
         Jan: 19937,
         Feb: 18750,
@@ -35,8 +36,9 @@ const initState = {
       },
     },
     {
-      id: 2,
-      name: "เงินรับรายได้ (จาก กฟฟ. ต่างๆ)",
+      id: 102,
+      name: "เงินรับรายได้(จาก กฟฟ.ต่างๆ)",
+      baseChart: true,
       cash: {
         Jan: 20620,
         Feb: 19482,
@@ -53,8 +55,9 @@ const initState = {
       },
     },
     {
-      id: 3,
+      id: 103,
       name: "เงินรับจากบัญชี Sinking Fund",
+      baseChart: true,
       cash: {
         Jan: 1500,
         Feb: 0,
@@ -71,8 +74,9 @@ const initState = {
       },
     },
     {
-      id: 4,
+      id: 104,
       name: "เงินกู้ในประเทศ",
+      baseChart: false,
       cash: {
         Jan: 2000,
         Feb: 0,
@@ -89,8 +93,9 @@ const initState = {
       },
     },
     {
-      id: 5,
-      name: "เงินชดเชยค่าไฟฟ้า (กกพ.)",
+      id: 105,
+      name: "เงินชดเชยค่าไฟฟ้า(กกพ.)",
+      baseChart: true,
       cash: {
         Jan: 1250,
         Feb: 1250,
@@ -107,8 +112,9 @@ const initState = {
       },
     },
     {
-      id: 6,
+      id: 106,
       name: "เงินคืนค่า FT",
+      baseChart: true,
       cash: {
         Jan: 297,
         Feb: 0,
@@ -125,8 +131,9 @@ const initState = {
       },
     },
     {
-      id: 7,
+      id: 107,
       name: "เงินฝากประจำ ตราสารหนี้ครบกำหนด",
+      baseChart: true,
       cash: {
         Jan: 0,
         Feb: 1000,
@@ -143,8 +150,9 @@ const initState = {
       },
     },
     {
-      id: 8,
+      id: 108,
       name: "เงินรับคืนจากบัญชีเงินประกัน",
+      baseChart: true,
       cash: {
         Jan: 0,
         Feb: 0,
@@ -161,8 +169,9 @@ const initState = {
       },
     },
     {
-      id: 9,
+      id: 109,
       name: "เงินรับอื่นๆ",
+      baseChart: false,
       cash: {
         Jan: 314,
         Feb: 5,
@@ -181,7 +190,9 @@ const initState = {
   ],
   cashExpense: [
     {
+      id: 201,
       name: "เงินเดือน ค่าแรง ค่าสวัสดิการ",
+      baseChart: true,
       cash: {
         Jan: 893,
         Feb: 885,
@@ -198,7 +209,9 @@ const initState = {
       },
     },
     {
-      name: "ค่าซื้อกระแสไฟฟ้า (กฟภ.)",
+      id: 202,
+      name: "ค่าซื้อกระแสไฟฟ้า(กฟภ.)",
+      baseChart: true,
       cash: {
         Jan: 29023,
         Feb: 32155,
@@ -215,7 +228,9 @@ const initState = {
       },
     },
     {
+      id: 203,
       name: "ค่าซื้อกระแสไฟฟ้า (VSPP)",
+      baseChart: true,
       cash: {
         Jan: 1365,
         Feb: 1356,
@@ -232,7 +247,9 @@ const initState = {
       },
     },
     {
+      id: 204,
       name: "ค่าสินค้าและบริการ",
+      baseChart: true,
       cash: {
         Jan: 6069,
         Feb: 6027,
@@ -249,7 +266,9 @@ const initState = {
       },
     },
     {
+      id: 205,
       name: "ค่าใช้จ่าย กฟฟ.",
+      baseChart: true,
       cash: {
         Jan: 378,
         Feb: 434,
@@ -266,7 +285,9 @@ const initState = {
       },
     },
     {
+      id: 206,
       name: "จ่ายชำระหนี้เงินกู้",
+      baseChart: true,
       cash: {
         Jan: 1651,
         Feb: 198,
@@ -283,7 +304,9 @@ const initState = {
       },
     },
     {
+      id: 207,
       name: "นำฝากบัญชี Sinking Fund",
+      baseChart: true,
       cash: {
         Jan: 470,
         Feb: 489,
@@ -300,7 +323,9 @@ const initState = {
       },
     },
     {
+      id: 208,
       name: "นำฝากเงินประกันการใช้ไฟฟ้า",
+      baseChart: true,
       cash: {
         Jan: 304,
         Feb: 111,
@@ -317,7 +342,9 @@ const initState = {
       },
     },
     {
+      id: 209,
       name: "นำส่งรายได้แผ่นดิน",
+      baseChart: true,
       cash: {
         Jan: 0,
         Feb: 0,
@@ -334,7 +361,9 @@ const initState = {
       },
     },
     {
+      id: 210,
       name: "ค่าปรับจากการลงทุนต่ำกว่าแผน",
+      baseChart: true,
       cash: {
         Jan: 1291,
         Feb: 0,
@@ -351,7 +380,9 @@ const initState = {
       },
     },
     {
+      id: 211,
       name: "คืนเงินรายได้ให้ กกพ.",
+      baseChart: true,
       cash: {
         Jan: 0,
         Feb: 0,
@@ -368,7 +399,9 @@ const initState = {
       },
     },
     {
+      id: 212,
       name: "นำฝากเงินประจำ ตราสารหนี้",
+      baseChart: true,
       cash: {
         Jan: 2000,
         Feb: 1000,
@@ -384,25 +417,10 @@ const initState = {
         Dec: 0,
       },
     },
-    // {
-    //   name: "สำรองคืนเงินประกันฯ",
-    //   cash: {
-    //     Jan: 0,
-    //     Feb: 0,
-    //     Mar: 0,
-    //     Apr: 0,
-    //     May: 0,
-    //     Jun: 0,
-    //     Jul: 0,
-    //     Aug: 0,
-    //     Sep: 0,
-    //     Oct: 0,
-    //     Nov: 0,
-    //     Dec: 0,
-    //   },
-    // },
     {
+      id: 213,
       name: "เงินจ่ายอื่นๆ",
+      baseChart: true,
       cash: {
         Jan: 4,
         Feb: 5,
@@ -422,8 +440,9 @@ const initState = {
   // Policy and Solution
   policyList: [
     {
-      id: 10,
+      id: 301,
       name: "ขยายเวลาการชำระเงินค่าไฟฟ้าให้ผู้ใช้ไฟฟ้าประเภท 5",
+      nameShort: "ขยายเวลาผชฟ.ป5",
       cash: {
         Jan: 0,
         Feb: 0,
@@ -440,8 +459,9 @@ const initState = {
       },
     },
     {
-      id: 11,
+      id: 302,
       name: "ส่วนลดค่าไฟฟ้า 3% ผู้ใช้ไฟฟ้าทุกประเภท",
+      nameShort: "ลดค่าไฟฟ้า 3%",
       cash: {
         Jan: 0,
         Feb: 0,
@@ -458,8 +478,9 @@ const initState = {
       },
     },
     {
-      id: 12,
+      id: 303,
       name: "ผู้ใช้ไฟฟ้าประเภท 1.1.1 ที่ใช้ไฟฟ้าน้อยกว่า 90 หน่วยใช้ไฟฟ้าฟรี",
+      nameShort: "ผชฟ.1.1.1<90หน่วย",
       cash: {
         Jan: 0,
         Feb: 0,
@@ -476,9 +497,10 @@ const initState = {
       },
     },
     {
-      id: 13,
+      id: 304,
       name:
         "ขยายเวลาชำระไฟฟ้าผู้ใช้ไฟฟ้าประเภทบ้านอยู่อาศัยน้อยกว่า 150 หน่วย(6เดือน)",
+      nameShort: "ผชฟ.<150หน่วย(6เดือน)",
       cash: {
         Jan: 0,
         Feb: 0,
@@ -495,8 +517,9 @@ const initState = {
       },
     },
     {
-      id: 14,
+      id: 305,
       name: "ยกเว้นการเก็บค่าไฟฟ้าขั้นต่ำ(Minimun Charge)",
+      nameShort: "ยกเว้น Minimun Charge",
       cash: {
         Jan: 0,
         Feb: 0,
@@ -513,8 +536,9 @@ const initState = {
       },
     },
     {
-      id: 15,
+      id: 306,
       name: "ขยายเวลาชำระค่าไฟฟ้าให้ผู้ใช้ไฟฟ้าประเภท 5(ชำระ) #1",
+      nameShort: "ขยายเวลาผชฟ.ป5(ชำระ)#1",
       cash: {
         Jan: 0,
         Feb: 0,
@@ -531,8 +555,9 @@ const initState = {
       },
     },
     {
-      id: 16,
+      id: 307,
       name: "ขยายเวลาชำระค่าไฟฟ้าให้ผู้ใช้ไฟฟ้าประเภท 5(ชำระ) #2",
+      nameShort: "ขยายเวลาผชฟ.ป5(ชำระ)#2",
       cash: {
         Jan: 0,
         Feb: 0,
@@ -549,8 +574,9 @@ const initState = {
       },
     },
     {
-      id: 17,
+      id: 308,
       name: "ผู้ใช้ไฟฟ้ารายย่อยที่ใช้ไฟฟ้ามากกว่า 90 unit (ชำระ) #1",
+      nameShort: "ผชฟ.มากกว่า 90unit(ชำระ)#1",
       cash: {
         Jan: 0,
         Feb: 0,
@@ -567,8 +593,9 @@ const initState = {
       },
     },
     {
-      id: 18,
+      id: 309,
       name: "ผู้ใช้ไฟฟ้ารายย่อยที่ใช้ไฟฟ้ามากกว่า 90 unit (ชำระ) #2",
+      nameShort: "ผชฟ.มากกว่า 90unit(ชำระ)#2",
       cash: {
         Jan: 0,
         Feb: 0,
@@ -585,8 +612,9 @@ const initState = {
       },
     },
     {
-      id: 19,
+      id: 310,
       name: "ผู้ใช้ไฟฟ้ารายย่อยที่ใช้ไฟฟ้ามากกว่า 90 unit (ชำระ) #3",
+      nameShort: "ผชฟ.มากกว่า 90unit(ชำระ)#3",
       cash: {
         Jan: 0,
         Feb: 0,
@@ -605,8 +633,9 @@ const initState = {
   ],
   solutionList: [
     {
-      id: 1,
+      id: 401,
       name: "ผู้ใช้ไฟฟ้าประเภท 5 จ่ายค่าไฟฟ้าค้างชำระ",
+      nameShort: "ผชฟ.ป5 จ่ายค่าไฟฟ้า",
       cash: {
         Jan: 0,
         Feb: 0,
@@ -623,9 +652,10 @@ const initState = {
       },
     },
     {
-      id: 2,
+      id: 402,
       name:
         "ผู้ใช้ไฟฟ้าประเภท 1.1.1 ที่ใช้ไฟฟ้า > 90หน่วย จ่ายค่าไฟฟ้าค้างชำระ",
+      nameShort: "ผชฟ.ป1.1.1 จ่ายค่าไฟฟ้า",
       cash: {
         Jan: 0,
         Feb: 0,
@@ -654,26 +684,6 @@ const initState = {
     8: false,
     9: false,
     10: false,
-    11: false,
-    12: false,
-    13: false,
-    14: false,
-    15: false,
-    16: false,
-    17: false,
-    18: false,
-    19: false,
-    20: false,
-    21: false,
-    22: false,
-    23: false,
-    24: false,
-    25: false,
-    26: false,
-    27: false,
-    28: false,
-    29: false,
-    30: false,
   },
 };
 

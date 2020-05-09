@@ -38,6 +38,7 @@ class NetCashChart extends Component {
     const datapoint1 = data[0]["datapointsCashIncomeMonthTotal"];
     const datapoint2 = data[1]["datapointsCashExpenseMonthTotal"];
     const datapoint3 = data[2]["datapointsNetMonthTotal"];
+    const datapoint4 = data[3]["datapointsNetMonthTotalOnlyBase"];
 
     // console.log(datapoint1);
     // console.log(datapoint2);
@@ -88,6 +89,15 @@ class NetCashChart extends Component {
         {
           type: "area",
           name: "เงินสดคงเหลือสุทธิ",
+          markerBorderColor: "white",
+          markerBorderThickness: 2,
+          showInLegend: true,
+          yValueFormatString: "MB#,##0",
+          dataPoints: datapoint4,
+        },
+        {
+          type: "line",
+          name: "เงินสดคงเหลือสุทธิ(คาดการณ์)",
           markerBorderColor: "white",
           markerBorderThickness: 2,
           showInLegend: true,
