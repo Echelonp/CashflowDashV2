@@ -1,25 +1,3 @@
-export const cashBalanceOnlyBase = (cashData) => {
-  const cash = cashData.filter((eachCash) => {
-    return eachCash.baseChart === true;
-  });
-  const cashList = cash.map((cashIncome, i) => cashIncome.cash);
-  let cashMonthTotal = [];
-  const month = Object.keys(cashList[0]);
-
-  for (let i = 0; i < month.length; i++) {
-    let cash_col = 0;
-    for (let j = 0; j < cashList.length; j++) {
-      cash_col = cash_col + cashList[j][month[i]];
-    }
-    cashMonthTotal.push({
-      key: month[i],
-      value: cash_col,
-    });
-  }
-  // console.log(cashIncomeMonthTotal);
-  return cashMonthTotal;
-};
-
 export const cashBalance = (cash) => {
   const cashList = cash.map((cashIncome, i) => cashIncome.cash);
   let cashMonthTotal = [];
@@ -35,7 +13,6 @@ export const cashBalance = (cash) => {
       value: cash_col,
     });
   }
-  // console.log(cashIncomeMonthTotal);
   return cashMonthTotal;
 };
 
@@ -73,14 +50,23 @@ export const cashToDatapointsForCombiChart = (
 ) => {
   const cashIncomeMonthTotal = cashBalance(cashIncome);
   const cashExpenseMonthTotal = cashBalance(cashExpense);
+  //   console.log("cashExpenseMonthTotal", cashExpenseMonthTotal);
   const cashNetMonthTotal = cashNetCal(
     cashIncomeMonthTotal,
     cashExpenseMonthTotal,
     cashInit
   );
+
   // cash netOnlyBase
-  const cashIncomeMonthTotalOnlyBase = cashBalanceOnlyBase(cashIncome);
-  const cashExpenseMonthTotalOnlyBase = cashBalanceOnlyBase(cashExpense);
+  const cashIncomeOnlyBase = cashIncome.filter((cash) => {
+    return cash.baseChart === true;
+  });
+  const cashExpenseOnlyBase = cashExpense.filter((cash) => {
+    return cash.baseChart === true;
+  });
+  const cashIncomeMonthTotalOnlyBase = cashBalance(cashIncomeOnlyBase);
+  const cashExpenseMonthTotalOnlyBase = cashBalance(cashExpenseOnlyBase);
+
   const cashNetMonthTotalOnlyBase = cashNetCal(
     cashIncomeMonthTotalOnlyBase,
     cashExpenseMonthTotalOnlyBase,
@@ -143,4 +129,69 @@ export const cashToDatapointsForCombiChart = (
     datapointsNetMonthTotalOnlyBase: datapointsNetMonthTotalOnlyBase,
   });
   return data;
+};
+
+export const cashToDatapointForStackedColumn = (cash, monthsShort) => {
+  // expect parameter type like list of dictionary  such as cashIncome or cashExpense
+  // const cash = this.state.cashIncome;
+
+  const cashEach = cash.filter((cashEach) => {
+    return cashEach.breakdownDis === true;
+  });
+  const cashGroup = cash.filter((cashEach) => {
+    return cashEach.breakdownDis === false;
+  });
+  // Do cashEach
+  let cashData = [];
+  for (let i = 0; i < cashEach.length; i++) {
+    let datapoint = [];
+    for (let j = 0; j < 12; j++) {
+      datapoint.push({
+        label: monthsShort[j],
+        y: cashEach[i]["cash"][monthsShort[j]],
+      });
+    }
+    cashData.push({
+      name: cashEach[i]["name"],
+      datapoints: datapoint,
+    });
+  }
+  // Do cashGroup
+  if (cashGroup.length === 0) {
+    return cashData;
+  }
+  const cashGroupSum = cashBalance(cashGroup);
+  let datapoint_tmp = [];
+  for (let i = 0; i < 12; i++) {
+    datapoint_tmp.push({
+      label: monthsShort[i],
+      y: cashGroupSum[i]["value"],
+    });
+  }
+  cashData.push({
+    name: "อื่นๆ",
+    datapoints: datapoint_tmp,
+  });
+  //   console.log("cashData", cashData);
+  return cashData;
+};
+
+export const cashToDatapointForStackedColumn2 = (cash, monthsShort) => {
+  // expect parameter type like list of dictionary  such as cashIncome or cashExpense
+  // const cash = this.state.cashIncome;
+  let cashData = [];
+  for (let i = 0; i < cash.length; i++) {
+    let datapoint = [];
+    for (let j = 0; j < 12; j++) {
+      datapoint.push({
+        label: monthsShort[j],
+        y: cash[i]["cash"][monthsShort[j]],
+      });
+    }
+    cashData.push({
+      name: cash[i]["name"],
+      datapoints: datapoint,
+    });
+  }
+  return cashData;
 };

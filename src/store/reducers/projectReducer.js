@@ -20,6 +20,7 @@ const initState = {
       id: 101,
       name: "เงินรับรายได้ (สนญ.)",
       baseChart: true,
+      breakdownDis: true,
       cash: {
         Jan: 19937,
         Feb: 18750,
@@ -38,6 +39,7 @@ const initState = {
     {
       id: 102,
       name: "เงินรับรายได้(จาก กฟฟ.ต่างๆ)",
+      breakdownDis: true,
       baseChart: true,
       cash: {
         Jan: 20620,
@@ -58,6 +60,7 @@ const initState = {
       id: 103,
       name: "เงินรับจากบัญชี Sinking Fund",
       baseChart: true,
+      breakdownDis: false,
       cash: {
         Jan: 1500,
         Feb: 0,
@@ -76,7 +79,8 @@ const initState = {
     {
       id: 104,
       name: "เงินกู้ในประเทศ",
-      baseChart: false,
+      baseChart: true,
+      breakdownDis: true,
       cash: {
         Jan: 2000,
         Feb: 0,
@@ -95,7 +99,8 @@ const initState = {
     {
       id: 105,
       name: "เงินชดเชยค่าไฟฟ้า(กกพ.)",
-      baseChart: true,
+      baseChart: false,
+      breakdownDis: false,
       cash: {
         Jan: 1250,
         Feb: 1250,
@@ -115,6 +120,7 @@ const initState = {
       id: 106,
       name: "เงินคืนค่า FT",
       baseChart: true,
+      breakdownDis: false,
       cash: {
         Jan: 297,
         Feb: 0,
@@ -133,7 +139,8 @@ const initState = {
     {
       id: 107,
       name: "เงินฝากประจำ ตราสารหนี้ครบกำหนด",
-      baseChart: true,
+      baseChart: false,
+      breakdownDis: false,
       cash: {
         Jan: 0,
         Feb: 1000,
@@ -153,6 +160,7 @@ const initState = {
       id: 108,
       name: "เงินรับคืนจากบัญชีเงินประกัน",
       baseChart: true,
+      breakdownDis: false,
       cash: {
         Jan: 0,
         Feb: 0,
@@ -172,6 +180,7 @@ const initState = {
       id: 109,
       name: "เงินรับอื่นๆ",
       baseChart: false,
+      breakdownDis: false,
       cash: {
         Jan: 314,
         Feb: 5,
@@ -193,6 +202,7 @@ const initState = {
       id: 201,
       name: "เงินเดือน ค่าแรง ค่าสวัสดิการ",
       baseChart: true,
+      breakdownDis: false,
       cash: {
         Jan: 893,
         Feb: 885,
@@ -212,6 +222,7 @@ const initState = {
       id: 202,
       name: "ค่าซื้อกระแสไฟฟ้า(กฟภ.)",
       baseChart: true,
+      breakdownDis: true,
       cash: {
         Jan: 29023,
         Feb: 32155,
@@ -231,6 +242,7 @@ const initState = {
       id: 203,
       name: "ค่าซื้อกระแสไฟฟ้า (VSPP)",
       baseChart: true,
+      breakdownDis: false,
       cash: {
         Jan: 1365,
         Feb: 1356,
@@ -250,6 +262,7 @@ const initState = {
       id: 204,
       name: "ค่าสินค้าและบริการ",
       baseChart: true,
+      breakdownDis: true,
       cash: {
         Jan: 6069,
         Feb: 6027,
@@ -269,6 +282,7 @@ const initState = {
       id: 205,
       name: "ค่าใช้จ่าย กฟฟ.",
       baseChart: true,
+      breakdownDis: false,
       cash: {
         Jan: 378,
         Feb: 434,
@@ -288,6 +302,7 @@ const initState = {
       id: 206,
       name: "จ่ายชำระหนี้เงินกู้",
       baseChart: true,
+      breakdownDis: false,
       cash: {
         Jan: 1651,
         Feb: 198,
@@ -307,6 +322,7 @@ const initState = {
       id: 207,
       name: "นำฝากบัญชี Sinking Fund",
       baseChart: true,
+      breakdownDis: false,
       cash: {
         Jan: 470,
         Feb: 489,
@@ -326,6 +342,7 @@ const initState = {
       id: 208,
       name: "นำฝากเงินประกันการใช้ไฟฟ้า",
       baseChart: true,
+      breakdownDis: false,
       cash: {
         Jan: 304,
         Feb: 111,
@@ -345,6 +362,7 @@ const initState = {
       id: 209,
       name: "นำส่งรายได้แผ่นดิน",
       baseChart: true,
+      breakdownDis: true,
       cash: {
         Jan: 0,
         Feb: 0,
@@ -364,6 +382,7 @@ const initState = {
       id: 210,
       name: "ค่าปรับจากการลงทุนต่ำกว่าแผน",
       baseChart: true,
+      breakdownDis: false,
       cash: {
         Jan: 1291,
         Feb: 0,
@@ -383,6 +402,7 @@ const initState = {
       id: 211,
       name: "คืนเงินรายได้ให้ กกพ.",
       baseChart: true,
+      breakdownDis: false,
       cash: {
         Jan: 0,
         Feb: 0,
@@ -402,6 +422,7 @@ const initState = {
       id: 212,
       name: "นำฝากเงินประจำ ตราสารหนี้",
       baseChart: true,
+      breakdownDis: false,
       cash: {
         Jan: 2000,
         Feb: 1000,
@@ -421,6 +442,7 @@ const initState = {
       id: 213,
       name: "เงินจ่ายอื่นๆ",
       baseChart: true,
+      breakdownDis: false,
       cash: {
         Jan: 4,
         Feb: 5,
