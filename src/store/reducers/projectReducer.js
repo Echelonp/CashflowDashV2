@@ -18,7 +18,7 @@ const initState = {
   cashIncome: [
     {
       id: 101,
-      name: "เงินรับรายได้ (สนญ.)",
+      name: "เงินรับรายได้(สนญ.)",
       baseChart: true,
       breakdownDis: true,
       cash: {
@@ -38,7 +38,7 @@ const initState = {
     },
     {
       id: 102,
-      name: "เงินรับรายได้(จาก กฟฟ.ต่างๆ)",
+      name: "เงินรับรายได้(กฟฟ.ต่างๆ)",
       breakdownDis: true,
       baseChart: true,
       cash: {
@@ -220,7 +220,7 @@ const initState = {
     },
     {
       id: 202,
-      name: "ค่าซื้อกระแสไฟฟ้า(กฟภ.)",
+      name: "ค่าซื้อกระแสไฟฟ้า",
       baseChart: true,
       breakdownDis: true,
       cash: {
@@ -240,7 +240,7 @@ const initState = {
     },
     {
       id: 203,
-      name: "ค่าซื้อกระแสไฟฟ้า (VSPP)",
+      name: "ค่าซื้อกระแสไฟฟ้า(VSPP)",
       baseChart: true,
       breakdownDis: false,
       cash: {

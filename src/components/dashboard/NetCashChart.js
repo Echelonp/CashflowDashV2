@@ -11,10 +11,10 @@ class NetCashChart extends Component {
     this.addSymbols = this.addSymbols.bind(this);
   }
   addSymbols(e) {
-    var suffixes = ["", "K", "M", "B"];
-    var order = Math.max(Math.floor(Math.log(e.value) / Math.log(1000)), 0);
-    if (order > suffixes.length - 1) order = suffixes.length - 1;
-    var suffix = suffixes[order];
+    // var suffixes = ["", "K", "M", "B"];
+    // var order = Math.max(Math.floor(Math.log(e.value) / Math.log(1000)), 0);
+    // if (order > suffixes.length - 1) order = suffixes.length - 1;
+    // var suffix = suffixes[order];
     // return CanvasJS.formatNumber(e.value / Math.pow(1000, order)) + suffix;
     return CanvasJS.formatNumber(e.value);
   }
@@ -47,19 +47,20 @@ class NetCashChart extends Component {
     const options = {
       animationEnabled: true,
       exportEnabled: true,
-      colorSet: "colorSet2",
+      colorSet: "colorSet1",
       zoomEnabled: true,
       panEnabled: true,
       theme: "Light2",
       title: {
         text: "เงินหมุนเวียนคงเหลือปลายงวด",
         fontFamily: "verdana",
+        fontSize: 25,
       },
       axisX: {
         valueFormatString: "MMMM",
       },
       axisY: {
-        prefix: "MB",
+        prefix: "ลบ.",
         labelFormatter: this.addSymbols,
       },
       toolTip: {
@@ -73,27 +74,18 @@ class NetCashChart extends Component {
       data: [
         {
           type: "column",
-          name: "เงินสดจ่ายสุทธิ",
-          showInLegend: true,
-          xValueFormatString: "MMMM YYYY",
-          yValueFormatString: "MB#,##0",
-          dataPoints: datapoint2,
-        },
-        {
-          type: "column",
           name: "เงินสดรับสุทธิ",
           showInLegend: true,
           yValueFormatString: "MB#,##0",
           dataPoints: datapoint1,
         },
         {
-          type: "area",
-          name: "เงินสดคงเหลือสุทธิ",
-          markerBorderColor: "white",
-          markerBorderThickness: 2,
+          type: "column",
+          name: "เงินสดจ่ายสุทธิ",
           showInLegend: true,
+          xValueFormatString: "MMMM YYYY",
           yValueFormatString: "MB#,##0",
-          dataPoints: datapoint4,
+          dataPoints: datapoint2,
         },
         {
           type: "line",
@@ -103,6 +95,15 @@ class NetCashChart extends Component {
           showInLegend: true,
           yValueFormatString: "MB#,##0",
           dataPoints: datapoint3,
+        },
+        {
+          type: "line",
+          name: "เงินสดคงเหลือสุทธิ",
+          markerBorderColor: "white",
+          markerBorderThickness: 2,
+          showInLegend: true,
+          yValueFormatString: "MB#,##0",
+          dataPoints: datapoint4,
         },
       ],
     };

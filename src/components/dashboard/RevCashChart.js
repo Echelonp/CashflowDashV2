@@ -38,23 +38,27 @@ class RevCashChart extends Component {
     const options = {
       animationEnabled: true,
       exportEnabled: true,
+      zoomEnabled: true,
+      panEnabled: true,
+
       title: {
         text: this.props.graph_name,
         fontFamily: "verdana",
+        fontSize: 25,
       },
       axisY: {
-        title: "Million Bath",
-        prefix: "MB",
+        // title: "Million Bath",
+        prefix: "ลบ.",
         suffix: "",
       },
       toolTip: {
         shared: true,
-        reversed: true,
+        reversed: false,
       },
       legend: {
-        verticalAlign: "center",
-        horizontalAlign: "right",
-        reversed: true,
+        verticalAlign: "top",
+        horizontalAlign: "center",
+        reversed: false,
         cursor: "pointer",
         itemclick: this.toggleDataSeries,
       },
