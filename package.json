@@ -13,7 +13,6 @@
     "react-redux": "6.0.0",
     "react-router-dom": "5.1.2",
     "react-scripts": "3.4.1",
-    "rechart": "^0.0.1",
     "redux": "4.0.5"
   },
   "scripts": {

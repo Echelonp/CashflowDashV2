@@ -2,7 +2,8 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import NetCashChart from "./NetCashChart";
 import RevCashChart from "./RevCashChart";
-// import RevCashStackedBarChart from "./RevCashStackedBarChart";
+import FinancialHighlight from "./FinancialHighlight";
+
 // fn
 import {
   cashToDatapointsForCombiChart,
@@ -34,51 +35,7 @@ class Dashboard extends Component {
       <div>
         <div className="row">
           <div className="section col s12 m9">
-            <div className="card section col s12 m6">
-              <div className="col s12 m6">
-                <span className="card-title">เงินคงเหลือปลายงวด</span>
-                <p className="right-align">ล้านบาท</p>
-                <span className="card-title">3,259</span>
-              </div>
-              <div className="col s12 m6">
-                <div className="card col s12">
-                  <div className="col s6">
-                    <div className="col s12">Test</div>
-                    <div className="col s12">Test</div>
-                  </div>
-                  <div className="col s6">
-                    <div className="col s12">Test</div>
-                    <div className="col s12">Test</div>
-                  </div>
-                </div>
-                <div className="card col s12">
-                  <div className="col s6">
-                    <div className="col s12">Test</div>
-                    <div className="col s12">Test</div>
-                  </div>
-                  <div className="col s6">
-                    <div className="col s12">Test</div>
-                    <div className="col s12">Test</div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="col s12 m3">
-              <div className="card col s12">
-                <span>Test</span>
-              </div>
-              <div className="card col s12">
-                <span>Test</span>
-              </div>
-            </div>
-            <div className="col s12 m3">
-              <div className="card col s12">
-                <span>Test</span>
-              </div>
-              <div className="card col s12">
-                <span>Test</span>
-              </div>
-            </div>
+            <FinancialHighlight></FinancialHighlight>
             <div className="section col s12 m12">
               <NetCashChart
                 datapointForCombiChart={datapointForCombiChart}
@@ -100,7 +57,7 @@ class Dashboard extends Component {
             </div>
           </div>
           <div className="section col s12 m3">
-            <p>Test</p>
+            <p>Test Cashflow Sensitivity</p>
           </div>
         </div>
 

@@ -6,12 +6,15 @@ class Navbar extends Component {
 
   render() {
     return (
-      <div>
-        <nav>
-          <p>Test</p>
-        </nav>
-        <br></br>
-      </div>
+      <nav>
+        <div className="grey lighten-1 black-text text-lighten-5 nav-wrapper">
+          <div className="container left-align">
+            <a className="brand-logo">
+              <span>กระแสเงินสด</span>
+            </a>
+          </div>
+        </div>
+      </nav>
     );
   }
 }
