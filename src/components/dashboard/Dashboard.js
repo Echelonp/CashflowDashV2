@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import NetCashChart from "./NetCashChart";
 import RevCashChart from "./RevCashChart";
 import FinancialHighlight from "./FinancialHighlight";
+import CashFlowSensitivity from "./cashFlowSensitivity/CashFlowSensitivity";
 
 // fn
 import {
@@ -57,7 +58,9 @@ class Dashboard extends Component {
             </div>
           </div>
           <div className="section col s12 m3">
-            <p>Test Cashflow Sensitivity</p>
+            <div className="">
+              <CashFlowSensitivity></CashFlowSensitivity>
+            </div>
           </div>
         </div>
 

@@ -4,7 +4,7 @@ import { BrowserRouter, Switch, Route } from "react-router-dom";
 
 // component
 import Dashboard from "./components/dashboard/Dashboard";
-import Sidenav from "./components/dashboard/cashFlowSensitivity/Sidenav";
+import CashFlowSensitivity from "./components/dashboard/cashFlowSensitivity/CashFlowSensitivity";
 import Navbar from "./components/layout/Navbar";
 
 function App() {
@@ -14,7 +14,7 @@ function App() {
         <Navbar></Navbar>
         <Switch>
           <Route exact path="/" component={Dashboard}></Route>
-          <Route path="/sidenav" component={Sidenav}></Route>
+          <Route path="/test" component={CashFlowSensitivity}></Route>
         </Switch>
       </div>
     </BrowserRouter>

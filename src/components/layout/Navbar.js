@@ -7,7 +7,7 @@ class Navbar extends Component {
   render() {
     return (
       <nav>
-        <div className="grey lighten-1 black-text text-lighten-5 nav-wrapper">
+        <div className="grey darken-3 black-text text-lighten-5 nav-wrapper">
           <div className="container left-align">
             <a className="brand-logo">
               <span>กระแสเงินสด</span>
@@ -20,7 +20,7 @@ class Navbar extends Component {
 }
 
 const mapStateToProps = (state) => {
-  console.log("MapState", state);
+  // console.log("MapState", state);
   return {
     projects: state.projects,
   };

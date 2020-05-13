@@ -463,8 +463,10 @@ const initState = {
   policyList: [
     {
       id: 301,
-      name: "ขยายเวลาการชำระเงินค่าไฟฟ้าให้ผู้ใช้ไฟฟ้าประเภท 5",
-      nameShort: "ขยายเวลาผชฟ.ป5",
+      namefull: "ขยายเวลาการชำระเงินค่าไฟฟ้าให้ผู้ใช้ไฟฟ้าประเภท 5",
+      name: "ขยายเวลาผชฟ.ป5",
+      baseChart: true,
+      breakdownDis: true,
       cash: {
         Jan: 0,
         Feb: 0,
@@ -482,8 +484,10 @@ const initState = {
     },
     {
       id: 302,
-      name: "ส่วนลดค่าไฟฟ้า 3% ผู้ใช้ไฟฟ้าทุกประเภท",
-      nameShort: "ลดค่าไฟฟ้า 3%",
+      namefull: "ส่วนลดค่าไฟฟ้า 3% ผู้ใช้ไฟฟ้าทุกประเภท",
+      name: "ลดค่าไฟฟ้า 3%",
+      baseChart: true,
+      breakdownDis: true,
       cash: {
         Jan: 0,
         Feb: 0,
@@ -501,8 +505,11 @@ const initState = {
     },
     {
       id: 303,
-      name: "ผู้ใช้ไฟฟ้าประเภท 1.1.1 ที่ใช้ไฟฟ้าน้อยกว่า 90 หน่วยใช้ไฟฟ้าฟรี",
-      nameShort: "ผชฟ.1.1.1<90หน่วย",
+      namefull:
+        "ผู้ใช้ไฟฟ้าประเภท 1.1.1 ที่ใช้ไฟฟ้าน้อยกว่า 90 หน่วยใช้ไฟฟ้าฟรี",
+      name: "ผชฟ.1.1.1<90หน่วย",
+      baseChart: true,
+      breakdownDis: true,
       cash: {
         Jan: 0,
         Feb: 0,
@@ -520,9 +527,11 @@ const initState = {
     },
     {
       id: 304,
-      name:
+      namefull:
         "ขยายเวลาชำระไฟฟ้าผู้ใช้ไฟฟ้าประเภทบ้านอยู่อาศัยน้อยกว่า 150 หน่วย(6เดือน)",
-      nameShort: "ผชฟ.<150หน่วย(6เดือน)",
+      name: "ผชฟ.<150หน่วย(6เดือน)",
+      baseChart: true,
+      breakdownDis: true,
       cash: {
         Jan: 0,
         Feb: 0,
@@ -540,8 +549,10 @@ const initState = {
     },
     {
       id: 305,
-      name: "ยกเว้นการเก็บค่าไฟฟ้าขั้นต่ำ(Minimun Charge)",
-      nameShort: "ยกเว้น Minimun Charge",
+      namefull: "ยกเว้นการเก็บค่าไฟฟ้าขั้นต่ำ(Minimun Charge)",
+      name: "ยกเว้น Minimun Charge",
+      baseChart: true,
+      breakdownDis: true,
       cash: {
         Jan: 0,
         Feb: 0,
@@ -559,8 +570,10 @@ const initState = {
     },
     {
       id: 306,
-      name: "ขยายเวลาชำระค่าไฟฟ้าให้ผู้ใช้ไฟฟ้าประเภท 5(ชำระ) #1",
-      nameShort: "ขยายเวลาผชฟ.ป5(ชำระ)#1",
+      namefull: "ขยายเวลาชำระค่าไฟฟ้าให้ผู้ใช้ไฟฟ้าประเภท 5(ชำระ) #1",
+      name: "ขยายเวลาผชฟ.ป5(ชำระ)#1",
+      baseChart: true,
+      breakdownDis: true,
       cash: {
         Jan: 0,
         Feb: 0,
@@ -578,8 +591,10 @@ const initState = {
     },
     {
       id: 307,
-      name: "ขยายเวลาชำระค่าไฟฟ้าให้ผู้ใช้ไฟฟ้าประเภท 5(ชำระ) #2",
-      nameShort: "ขยายเวลาผชฟ.ป5(ชำระ)#2",
+      namefull: "ขยายเวลาชำระค่าไฟฟ้าให้ผู้ใช้ไฟฟ้าประเภท 5(ชำระ) #2",
+      name: "ขยายเวลาผชฟ.ป5(ชำระ)#2",
+      baseChart: true,
+      breakdownDis: true,
       cash: {
         Jan: 0,
         Feb: 0,
@@ -597,8 +612,10 @@ const initState = {
     },
     {
       id: 308,
-      name: "ผู้ใช้ไฟฟ้ารายย่อยที่ใช้ไฟฟ้ามากกว่า 90 unit (ชำระ) #1",
-      nameShort: "ผชฟ.มากกว่า 90unit(ชำระ)#1",
+      namefull: "ผู้ใช้ไฟฟ้ารายย่อยที่ใช้ไฟฟ้ามากกว่า 90 unit (ชำระ) #1",
+      name: "ผชฟ.มากกว่า 90unit(ชำระ)#1",
+      baseChart: true,
+      breakdownDis: true,
       cash: {
         Jan: 0,
         Feb: 0,
@@ -616,8 +633,10 @@ const initState = {
     },
     {
       id: 309,
-      name: "ผู้ใช้ไฟฟ้ารายย่อยที่ใช้ไฟฟ้ามากกว่า 90 unit (ชำระ) #2",
-      nameShort: "ผชฟ.มากกว่า 90unit(ชำระ)#2",
+      namefull: "ผู้ใช้ไฟฟ้ารายย่อยที่ใช้ไฟฟ้ามากกว่า 90 unit (ชำระ) #2",
+      name: "ผชฟ.มากกว่า 90unit(ชำระ)#2",
+      baseChart: true,
+      breakdownDis: true,
       cash: {
         Jan: 0,
         Feb: 0,
@@ -635,8 +654,10 @@ const initState = {
     },
     {
       id: 310,
-      name: "ผู้ใช้ไฟฟ้ารายย่อยที่ใช้ไฟฟ้ามากกว่า 90 unit (ชำระ) #3",
-      nameShort: "ผชฟ.มากกว่า 90unit(ชำระ)#3",
+      namefull: "ผู้ใช้ไฟฟ้ารายย่อยที่ใช้ไฟฟ้ามากกว่า 90 unit (ชำระ) #3",
+      name: "ผชฟ.มากกว่า 90unit(ชำระ)#3",
+      baseChart: true,
+      breakdownDis: true,
       cash: {
         Jan: 0,
         Feb: 0,
@@ -658,6 +679,8 @@ const initState = {
       id: 401,
       name: "ผู้ใช้ไฟฟ้าประเภท 5 จ่ายค่าไฟฟ้าค้างชำระ",
       nameShort: "ผชฟ.ป5 จ่ายค่าไฟฟ้า",
+      baseChart: true,
+      breakdownDis: true,
       cash: {
         Jan: 0,
         Feb: 0,
@@ -678,6 +701,8 @@ const initState = {
       name:
         "ผู้ใช้ไฟฟ้าประเภท 1.1.1 ที่ใช้ไฟฟ้า > 90หน่วย จ่ายค่าไฟฟ้าค้างชำระ",
       nameShort: "ผชฟ.ป1.1.1 จ่ายค่าไฟฟ้า",
+      baseChart: true,
+      breakdownDis: true,
       cash: {
         Jan: 0,
         Feb: 0,
