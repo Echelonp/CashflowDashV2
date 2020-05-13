@@ -1,7 +1,7 @@
 import React from "react";
 
 const Policy = (props) => {
-  console.log("Policy", props);
+  //   console.log("Policy", props);
   const policyList = props.policyList.map((policy, i) => {
     return (
       <div className="left-align" key={policy.id}>
@@ -15,7 +15,6 @@ const Policy = (props) => {
             <span style={{ fontSize: "18px" }}>{policy.namefull}</span>
           </label>
         </div>
-
         <br></br>
       </div>
     );
