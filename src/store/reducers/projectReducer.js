@@ -465,6 +465,7 @@ const initState = {
       id: 301,
       namefull: "ขยายเวลาการชำระเงินค่าไฟฟ้าให้ผู้ใช้ไฟฟ้าประเภท 5",
       name: "ขยายเวลาผชฟ.ป5",
+      factorCoporate: 100,
       baseChart: true,
       breakdownDis: true,
       cash: {
@@ -488,6 +489,7 @@ const initState = {
       name: "ลดค่าไฟฟ้า 3%",
       baseChart: true,
       breakdownDis: true,
+      factorCoporate: 100,
       cash: {
         Jan: 0,
         Feb: 0,
@@ -510,6 +512,7 @@ const initState = {
       name: "ผชฟ.1.1.1<90หน่วย",
       baseChart: true,
       breakdownDis: true,
+      factorCoporate: 100,
       cash: {
         Jan: 0,
         Feb: 0,
@@ -532,6 +535,7 @@ const initState = {
       name: "ผชฟ.<150หน่วย(6เดือน)",
       baseChart: true,
       breakdownDis: true,
+      factorCoporate: 100,
       cash: {
         Jan: 0,
         Feb: 0,
@@ -551,6 +555,7 @@ const initState = {
       id: 305,
       namefull: "ยกเว้นการเก็บค่าไฟฟ้าขั้นต่ำ(Minimun Charge)",
       name: "ยกเว้น Minimun Charge",
+      factorCoporate: 100,
       baseChart: true,
       breakdownDis: true,
       cash: {
@@ -574,6 +579,7 @@ const initState = {
       name: "ขยายเวลาผชฟ.ป5(ชำระ)#1",
       baseChart: true,
       breakdownDis: true,
+      factorCoporate: 100,
       cash: {
         Jan: 0,
         Feb: 0,
@@ -595,6 +601,7 @@ const initState = {
       name: "ขยายเวลาผชฟ.ป5(ชำระ)#2",
       baseChart: true,
       breakdownDis: true,
+      factorCoporate: 100,
       cash: {
         Jan: 0,
         Feb: 0,
@@ -616,6 +623,7 @@ const initState = {
       name: "ผชฟ.มากกว่า 90unit(ชำระ)#1",
       baseChart: true,
       breakdownDis: true,
+      factorCoporate: 100,
       cash: {
         Jan: 0,
         Feb: 0,
@@ -637,6 +645,7 @@ const initState = {
       name: "ผชฟ.มากกว่า 90unit(ชำระ)#2",
       baseChart: true,
       breakdownDis: true,
+      factorCoporate: 100,
       cash: {
         Jan: 0,
         Feb: 0,
@@ -658,6 +667,7 @@ const initState = {
       name: "ผชฟ.มากกว่า 90unit(ชำระ)#3",
       baseChart: true,
       breakdownDis: true,
+      factorCoporate: 100,
       cash: {
         Jan: 0,
         Feb: 0,
