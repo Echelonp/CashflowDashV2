@@ -8,7 +8,7 @@ const Policy = (props) => {
       <li className="left-align" key={policy.id}>
         <div>
           <span style={{ fontSize: "18px" }}>{policy.namefull}</span>
-          <br></br>
+          {/* <br></br> */}
           <div>
             <label>
               <input
