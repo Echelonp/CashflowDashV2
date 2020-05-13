@@ -3,6 +3,9 @@ import { connect } from "react-redux";
 import Policy from "./Policy";
 
 class CashFlowSensitivity extends Component {
+  state = {
+    checkedIdList: [],
+  };
   policyApply2 = (policyId, checkedValue, n_new) => {
     let CheckedboxTmp = this.state.Checkedbox;
     CheckedboxTmp[policyId] = checkedValue;
@@ -33,16 +36,45 @@ class CashFlowSensitivity extends Component {
     });
   };
   policyApply = (policyId, checkedValue) => {
-    console.log("PolicyApplyClicked", policyId, checkedValue);
+    // console.log("PolicyApplyClicked", policyId, checkedValue);
+
+    // Creat list of cheackedBox==true and update to state
+    let checkedIdList = [];
+    if (checkedValue) {
+      checkedIdList = [...this.state.checkedIdList, policyId];
+      this.setState({ checkedIdList });
+      console.log("checkedIdList", checkedIdList);
+    } else {
+      checkedIdList = this.state.checkedIdList.filter((eachId) => {
+        return eachId !== policyId;
+      });
+      this.setState({ checkedIdList });
+      console.log("checkedIdList", checkedIdList);
+    }
+
+    // create list of policy that contain in checkedIdList
+    const policyListApply = this.props.projects.policyList.filter((policy) => {
+      return checkedIdList.indexOf(policy.id) !== -1;
+    });
+    console.log("policyListApply", policyListApply);
+  };
+
+  sliderValue = (newValue, policyId) => {
+    console.log(newValue, policyId);
+  };
+
+  componentDidUpdate = () => {
+    // console.log("Test", this.state);
   };
 
   render() {
-    console.log("Props : ", this.props.projects.policyList);
+    // console.log("Props : ", this.props.projects.policyList[0].id);
     return (
       <div className="card col s12">
         <Policy
           policyList={this.props.projects.policyList}
           policyApply={this.policyApply}
+          sliderValue={this.sliderValue}
         ></Policy>
       </div>
     );

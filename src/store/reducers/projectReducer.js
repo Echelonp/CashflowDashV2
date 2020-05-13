@@ -466,7 +466,7 @@ const initState = {
       namefull: "ขยายเวลาการชำระเงินค่าไฟฟ้าให้ผู้ใช้ไฟฟ้าประเภท 5",
       name: "ขยายเวลาผชฟ.ป5",
       factorCoporate: 100,
-      baseChart: true,
+      baseChart: false,
       breakdownDis: true,
       cash: {
         Jan: 0,
@@ -487,7 +487,7 @@ const initState = {
       id: 302,
       namefull: "ส่วนลดค่าไฟฟ้า 3% ผู้ใช้ไฟฟ้าทุกประเภท",
       name: "ลดค่าไฟฟ้า 3%",
-      baseChart: true,
+      baseChart: false,
       breakdownDis: true,
       factorCoporate: 100,
       cash: {
@@ -510,7 +510,7 @@ const initState = {
       namefull:
         "ผู้ใช้ไฟฟ้าประเภท 1.1.1 ที่ใช้ไฟฟ้าน้อยกว่า 90 หน่วยใช้ไฟฟ้าฟรี",
       name: "ผชฟ.1.1.1<90หน่วย",
-      baseChart: true,
+      baseChart: false,
       breakdownDis: true,
       factorCoporate: 100,
       cash: {
@@ -533,7 +533,7 @@ const initState = {
       namefull:
         "ขยายเวลาชำระไฟฟ้าผู้ใช้ไฟฟ้าประเภทบ้านอยู่อาศัยน้อยกว่า 150 หน่วย(6เดือน)",
       name: "ผชฟ.<150หน่วย(6เดือน)",
-      baseChart: true,
+      baseChart: false,
       breakdownDis: true,
       factorCoporate: 100,
       cash: {

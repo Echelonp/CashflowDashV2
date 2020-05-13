@@ -2,7 +2,7 @@ import React from "react";
 import CustomizedSlider from "./Slider";
 
 const Policy = (props) => {
-  //   console.log("Policy", props);
+  // console.log("Policy", props);
   const policyList = props.policyList.map((policy, i) => {
     return (
       <li className="left-align" key={policy.id}>
@@ -20,7 +20,10 @@ const Policy = (props) => {
             </label>
           </div>
           <div>
-            <CustomizedSlider policyId={policy.id}></CustomizedSlider>
+            <CustomizedSlider
+              policyId={policy.id}
+              sliderValue={props.sliderValue}
+            ></CustomizedSlider>
           </div>
         </div>
         <br></br>
