@@ -763,12 +763,26 @@ const projectReducer = (state = initState, action) => {
       return { ...state, PolicyCheckedList: action.newPolicyList };
     case "ADJUST_SLIDER":
       // console.log("ADJUST_SLIDER", action);
-      let selectedPolicy = state.policyList.filter((policy) => {
+      // dispatch(adjustSliderAction(sliderValue, policyId));
+      const selectedPolicy = state.policyList.filter((policy) => {
         return policy.id === action.policyId;
       });
+      const nonSelectedPolicy = state.policyList.filter((policy) => {
+        return policy.id !== action.policyId;
+      });
+      // console.log("nonSelectedPolicy", nonSelectedPolicy);
+
       selectedPolicy[0].factorCoporate = action.sliderValue;
-      // console.log("New State", state.policyList);
-      return state;
+      let selectedPolicy_tmp = selectedPolicy[0];
+      selectedPolicy_tmp.factorCoporate = action.sliderValue;
+      // console.log("selectedPolicy_tmp", selectedPolicy_tmp);
+
+      let newPolicy = nonSelectedPolicy.concat(selectedPolicy_tmp);
+      console.log("Adjust SLIDER", newPolicy);
+      return {
+        ...state,
+        policyList: newPolicy,
+      };
     default:
       return state;
   }
