@@ -17,7 +17,8 @@ class Dashboard extends Component {
     const newCashIncome = this.props.projects.cashIncome.concat(
       this.props.projects.PolicyCheckedList
     );
-    console.log("newCashIncome:", newCashIncome);
+    // console.log("newCashIncome:", newCashIncome);
+
     const datapointForCombiChart = cashToDatapointsForCombiChart(
       newCashIncome,
       this.props.projects.cashExpense,

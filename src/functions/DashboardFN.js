@@ -1,12 +1,21 @@
 export const cashBalance = (cash) => {
+  // console.log("cashBalance", cash);
   const cashList = cash.map((cashIncome, i) => cashIncome.cash);
+  // console.log("cashList", cashList);
+
+  const factorCoporateList = cash.map(
+    (cashIncome, i) => cashIncome.factorCoporate
+  );
+  // console.log("factorCoporate", factorCoporateList);
+
   let cashMonthTotal = [];
   const month = Object.keys(cashList[0]);
 
   for (let i = 0; i < month.length; i++) {
     let cash_col = 0;
     for (let j = 0; j < cashList.length; j++) {
-      cash_col = cash_col + cashList[j][month[i]];
+      cash_col =
+        cash_col + (factorCoporateList[j] / 100.0) * cashList[j][month[i]];
     }
     cashMonthTotal.push({
       key: month[i],
@@ -134,21 +143,28 @@ export const cashToDatapointsForCombiChart = (
 export const cashToDatapointForStackedColumn = (cash, monthsShort) => {
   // expect parameter type like list of dictionary  such as cashIncome or cashExpense
   // const cash = this.state.cashIncome;
-
+  // console.log("cashToDatapointForStackedColumn", cash);
   const cashEach = cash.filter((cashEach) => {
     return cashEach.breakdownDis === true;
   });
   const cashGroup = cash.filter((cashEach) => {
     return cashEach.breakdownDis === false;
   });
+
   // Do cashEach
   let cashData = [];
   for (let i = 0; i < cashEach.length; i++) {
     let datapoint = [];
     for (let j = 0; j < 12; j++) {
+      // console.log("cashEach" + i, cashEach[i].factorCoporate);
       datapoint.push({
         label: monthsShort[j],
-        y: cashEach[i]["cash"][monthsShort[j]],
+        y: Number(
+          (
+            (cashEach[i].factorCoporate / 100.0) *
+            cashEach[i]["cash"][monthsShort[j]]
+          ).toFixed(3)
+        ),
       });
     }
     cashData.push({
@@ -156,11 +172,16 @@ export const cashToDatapointForStackedColumn = (cash, monthsShort) => {
       datapoints: datapoint,
     });
   }
+  // console.log("cashData", cashData);
+
   // Do cashGroup
   if (cashGroup.length === 0) {
     return cashData;
   }
+  // console.log("cashGroup", cashGroup);
   const cashGroupSum = cashBalance(cashGroup);
+  // console.log("cashGroupSum", cashGroupSum);
+
   let datapoint_tmp = [];
   for (let i = 0; i < 12; i++) {
     datapoint_tmp.push({
