@@ -745,6 +745,7 @@ const initState = {
 };
 
 const projectReducer = (state = initState, action) => {
+  console.log("Action", action);
   return state;
 };
 

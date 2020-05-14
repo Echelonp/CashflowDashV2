@@ -1,6 +1,10 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import Policy from "./Policy";
+import {
+  adjustSliderAction,
+  checkedPolicyApplyAction,
+} from "../../../store/actions/CashFlowSensitivityActions";
 
 class CashFlowSensitivity extends Component {
   state = {
@@ -38,7 +42,7 @@ class CashFlowSensitivity extends Component {
   policyApply = (policyId, checkedValue) => {
     // console.log("PolicyApplyClicked", policyId, checkedValue);
 
-    // Creat list of cheackedBox==true and update to state
+    // Creat list of cheackedBox==true and update it to state
     let checkedIdList = [];
     if (checkedValue) {
       checkedIdList = [...this.state.checkedIdList, policyId];
@@ -57,10 +61,12 @@ class CashFlowSensitivity extends Component {
       return checkedIdList.indexOf(policy.id) !== -1;
     });
     console.log("policyListApply", policyListApply);
+    this.props.checkedPolicyApplyAction(policyListApply);
   };
 
   sliderValue = (newValue, policyId) => {
     console.log(newValue, policyId);
+    this.props.adjustSliderAction(newValue, policyId);
   };
 
   componentDidUpdate = () => {
@@ -88,4 +94,18 @@ const mapStateToProps = (state) => {
   };
 };
 
-export default connect(mapStateToProps)(CashFlowSensitivity);
+const mapDispatchToProps = (dispatch) => {
+  return {
+    checkedPolicyApplyAction: (newPolicyList) => {
+      dispatch(checkedPolicyApplyAction(newPolicyList));
+    },
+    adjustSliderAction: (sliderValue, policyId) => {
+      dispatch(adjustSliderAction(sliderValue, policyId));
+    },
+  };
+};
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(CashFlowSensitivity);
