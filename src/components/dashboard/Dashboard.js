@@ -14,23 +14,27 @@ import {
 class Dashboard extends Component {
   render() {
     // console.log("Props Dash:", this.props);
+    const newCashIncome = this.props.projects.cashIncome.concat(
+      this.props.projects.PolicyCheckedList
+    );
+    console.log("newCashIncome:", newCashIncome);
     const datapointForCombiChart = cashToDatapointsForCombiChart(
-      this.props.projects.cashIncome,
+      newCashIncome,
       this.props.projects.cashExpense,
       this.props.projects.cashInit,
       this.props.projects.monthsShort
     );
 
     const datapointIncomeStackColumn = cashToDatapointForStackedColumn(
-      this.props.projects.cashIncome,
+      newCashIncome,
       this.props.projects.monthsShort
     );
     const datapointExpenseStackColumn = cashToDatapointForStackedColumn(
       this.props.projects.cashExpense,
       this.props.projects.monthsShort
     );
-    console.log("datapointIncomeStackColumn", datapointIncomeStackColumn);
-    console.log("datapointExpenseStackColumn", datapointExpenseStackColumn);
+    // console.log("datapointIncomeStackColumn", datapointIncomeStackColumn);
+    // console.log("datapointExpenseStackColumn", datapointExpenseStackColumn);
 
     return (
       <div>

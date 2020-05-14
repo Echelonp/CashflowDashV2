@@ -729,24 +729,27 @@ const initState = {
       },
     },
   ],
-  // Checkedbox
-  Checkedbox: {
-    1: false,
-    2: false,
-    3: false,
-    4: false,
-    5: false,
-    6: false,
-    7: false,
-    8: false,
-    9: false,
-    10: false,
-  },
+  // PolicyChecked
+  PolicyCheckedList: [],
 };
 
 const projectReducer = (state = initState, action) => {
-  console.log("Action", action);
-  return state;
+  // console.log("State", state.policyList[Action]);
+  switch (action.type) {
+    case "CHECKED_POLICY":
+      // console.log("CHECKED_POLICY", action.newPolicyList);
+      return { ...state, PolicyCheckedList: action.newPolicyList };
+    case "ADJUST_SLIDER":
+      // console.log("ADJUST_SLIDER", action);
+      let selectedPolicy = state.policyList.filter((policy) => {
+        return policy.id === action.policyId;
+      });
+      selectedPolicy[0].factorCoporate = action.sliderValue;
+      // console.log("New State", state.policyList);
+      return state;
+    default:
+      return state;
+  }
 };
 
 export default projectReducer;
