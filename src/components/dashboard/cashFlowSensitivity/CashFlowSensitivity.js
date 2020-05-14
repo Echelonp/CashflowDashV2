@@ -19,7 +19,7 @@ class CashFlowSensitivity extends Component {
     if (checkedValue) {
       checkedIdList = [...this.state.checkedIdList, policyId];
       this.setState({ checkedIdList });
-      console.log("checkedIdList", checkedIdList);
+      // console.log("checkedIdList", checkedIdList);
     } else {
       checkedIdList = this.state.checkedIdList.filter((eachId) => {
         return eachId !== policyId;
@@ -32,7 +32,7 @@ class CashFlowSensitivity extends Component {
     const policyListApply = this.props.projects.policyList.filter((policy) => {
       return checkedIdList.indexOf(policy.id) !== -1;
     });
-    console.log("policyListApply", policyListApply);
+    // console.log("policyListApply", policyListApply);
     this.props.checkedPolicyApplyAction(policyListApply);
   };
 

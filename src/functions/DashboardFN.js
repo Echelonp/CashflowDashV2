@@ -151,8 +151,29 @@ export const cashToDatapointForStackedColumn = (cash, monthsShort) => {
     return cashEach.breakdownDis === false;
   });
 
-  // Do cashEach
   let cashData = [];
+  // Do cashGroup
+  if (cashGroup.length === 0) {
+    return cashData;
+  }
+  // console.log("cashGroup", cashGroup);
+  const cashGroupSum = cashBalance(cashGroup);
+  // console.log("cashGroupSum", cashGroupSum);
+
+  let datapoint_tmp = [];
+  for (let i = 0; i < 12; i++) {
+    datapoint_tmp.push({
+      label: monthsShort[i],
+      y: cashGroupSum[i]["value"],
+    });
+  }
+  cashData.push({
+    id: 0,
+    name: "อื่นๆ",
+    datapoints: datapoint_tmp,
+  });
+
+  // Do cashEach
   for (let i = 0; i < cashEach.length; i++) {
     let datapoint = [];
     for (let j = 0; j < 12; j++) {
@@ -173,27 +194,6 @@ export const cashToDatapointForStackedColumn = (cash, monthsShort) => {
     });
   }
   // console.log("cashData", cashData);
-
-  // Do cashGroup
-  if (cashGroup.length === 0) {
-    return cashData;
-  }
-  // console.log("cashGroup", cashGroup);
-  const cashGroupSum = cashBalance(cashGroup);
-  // console.log("cashGroupSum", cashGroupSum);
-
-  let datapoint_tmp = [];
-  for (let i = 0; i < 12; i++) {
-    datapoint_tmp.push({
-      label: monthsShort[i],
-      y: cashGroupSum[i]["value"],
-    });
-  }
-  cashData.push({
-    name: "อื่นๆ",
-    datapoints: datapoint_tmp,
-  });
-  //   console.log("cashData", cashData);
   return cashData;
 };
 

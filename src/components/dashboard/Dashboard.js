@@ -14,11 +14,15 @@ import {
 class Dashboard extends Component {
   render() {
     // console.log("Props Dash:", this.props);
-    const newCashIncome = this.props.projects.cashIncome.concat(
-      this.props.projects.PolicyCheckedList
-    );
-    // console.log("newCashIncome:", newCashIncome);
-
+    const newCashIncome = this.props.projects.cashIncome
+      .concat(this.props.projects.PolicyCheckedList)
+      .sort((a, b) => {
+        if (a.id > b.id) {
+          return 1;
+        } else {
+          return -1;
+        }
+      });
     const datapointForCombiChart = cashToDatapointsForCombiChart(
       newCashIncome,
       this.props.projects.cashExpense,
