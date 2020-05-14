@@ -764,6 +764,7 @@ const projectReducer = (state = initState, action) => {
     case "ADJUST_SLIDER":
       // console.log("ADJUST_SLIDER", action);
       // dispatch(adjustSliderAction(sliderValue, policyId));
+
       const selectedPolicy = state.policyList.filter((policy) => {
         return policy.id === action.policyId;
       });
@@ -777,8 +778,18 @@ const projectReducer = (state = initState, action) => {
       selectedPolicy_tmp.factorCoporate = action.sliderValue;
       // console.log("selectedPolicy_tmp", selectedPolicy_tmp);
 
-      let newPolicy = nonSelectedPolicy.concat(selectedPolicy_tmp);
-      console.log("Adjust SLIDER", newPolicy);
+      let newPolicy = [].concat(selectedPolicy_tmp);
+      newPolicy = newPolicy.concat(nonSelectedPolicy);
+
+      // console.log("Adjust SLIDER", newPolicy);
+      newPolicy.sort((a, b) => {
+        if (a.id > b.id) {
+          return 1;
+        } else {
+          return -1;
+        }
+      });
+
       return {
         ...state,
         policyList: newPolicy,
