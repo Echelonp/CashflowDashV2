@@ -40,11 +40,6 @@ class CashFlowSensitivity extends Component {
     console.log(newValue, policyId);
     this.props.adjustSliderAction(newValue, policyId);
   };
-
-  componentDidUpdate = () => {
-    // console.log("Test", this.state);
-  };
-
   render() {
     // console.log("Props : ", this.props.projects.policyList[0].id);
     return (

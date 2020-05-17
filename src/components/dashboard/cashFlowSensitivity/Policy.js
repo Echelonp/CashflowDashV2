@@ -5,20 +5,26 @@ const Policy = (props) => {
   // console.log("Policy", props);
   const policyList = props.policyList.map((policy, i) => {
     return (
-      <li className="left-align" key={policy.id}>
-        <div>
-          <span style={{ fontSize: "18px" }}>{policy.namefull}</span>
-          {/* <br></br> */}
-          <div>
+      <li className="active" key={policy.id}>
+        <div className="collapsible-header">
+          <div style={{ fontSize: "20px" }}>
             <label>
               <input
                 type="checkbox"
                 className="filled-in"
                 onChange={(e) => props.policyApply(policy.id, e.target.checked)}
               ></input>
-              <span style={{ fontSize: "18px" }}>ทดสอบ</span>
+              <span
+                className="grey-text text-darken-3"
+                style={{ fontSize: "23px" }}
+              >
+                มาตรการที่ {i + 1}
+              </span>
             </label>
           </div>
+        </div>
+        <div className="collapsible-body">
+          <span style={{ fontSize: "18px" }}>{policy.namefull}</span>
           <div>
             <CustomizedSlider
               policyId={policy.id}
@@ -26,17 +32,19 @@ const Policy = (props) => {
             ></CustomizedSlider>
           </div>
         </div>
-        <br></br>
       </li>
     );
   });
 
   return (
     <div>
-      <span style={{ fontSize: "20px" }}>
-        <strong>มาตราการ</strong>
-      </span>
-      <ol>{policyList}</ol>
+      <div className="left-allign">
+        <span style={{ fontSize: "30px" }}>
+          <strong>มาตรการช่วยเหลือ</strong>
+        </span>
+      </div>
+
+      <ul className="collapsible">{policyList}</ul>
     </div>
   );
 };

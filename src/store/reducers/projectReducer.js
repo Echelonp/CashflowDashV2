@@ -578,7 +578,7 @@ const initState = {
       namefull: "ยกเว้นการเก็บค่าไฟฟ้าขั้นต่ำ(Minimun Charge)",
       name: "ยกเว้น Minimun Charge",
       factorCoporate: 80,
-      baseChart: true,
+      baseChart: false,
       breakdownDis: true,
       cash: {
         Jan: 0,
@@ -599,7 +599,7 @@ const initState = {
       id: 306,
       namefull: "ขยายเวลาชำระค่าไฟฟ้าให้ผู้ใช้ไฟฟ้าประเภท 5(ชำระ) #1",
       name: "ขยายเวลาผชฟ.ป5(ชำระ)#1",
-      baseChart: true,
+      baseChart: false,
       breakdownDis: true,
       factorCoporate: 80,
       cash: {
@@ -621,7 +621,7 @@ const initState = {
       id: 307,
       namefull: "ขยายเวลาชำระค่าไฟฟ้าให้ผู้ใช้ไฟฟ้าประเภท 5(ชำระ) #2",
       name: "ขยายเวลาผชฟ.ป5(ชำระ)#2",
-      baseChart: true,
+      baseChart: false,
       breakdownDis: true,
       factorCoporate: 80,
       cash: {
@@ -643,7 +643,7 @@ const initState = {
       id: 308,
       namefull: "ผู้ใช้ไฟฟ้ารายย่อยที่ใช้ไฟฟ้ามากกว่า 90 unit (ชำระ) #1",
       name: "ผชฟ.มากกว่า 90unit(ชำระ)#1",
-      baseChart: true,
+      baseChart: false,
       breakdownDis: true,
       factorCoporate: 80,
       cash: {
@@ -665,7 +665,7 @@ const initState = {
       id: 309,
       namefull: "ผู้ใช้ไฟฟ้ารายย่อยที่ใช้ไฟฟ้ามากกว่า 90 unit (ชำระ) #2",
       name: "ผชฟ.มากกว่า 90unit(ชำระ)#2",
-      baseChart: true,
+      baseChart: false,
       breakdownDis: true,
       factorCoporate: 80,
       cash: {
@@ -687,7 +687,7 @@ const initState = {
       id: 310,
       namefull: "ผู้ใช้ไฟฟ้ารายย่อยที่ใช้ไฟฟ้ามากกว่า 90 unit (ชำระ) #3",
       name: "ผชฟ.มากกว่า 90unit(ชำระ)#3",
-      baseChart: true,
+      baseChart: false,
       breakdownDis: true,
       factorCoporate: 80,
       cash: {
