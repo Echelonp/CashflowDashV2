@@ -45,29 +45,29 @@ class Dashboard extends Component {
     return (
       <div>
         <div className="row">
-          <div className="section col s12 m9">
-            <FinancialHighlight></FinancialHighlight>
+          <div className="section col s12 m8 l9">
+            {/* <FinancialHighlight></FinancialHighlight> */}
             <div className="section col s12 m12">
               <NetCashChart
                 datapointForCombiChart={datapointForCombiChart}
               ></NetCashChart>
             </div>
 
-            <div className="section col s12 m6">
+            <div className="section col s12 m12 l6">
               <RevCashChart
                 dataPoints={datapointIncomeStackColumn}
                 graph_name={"กระแสเงินสดรับ"}
               ></RevCashChart>
             </div>
 
-            <div className="section col s12 m6">
+            <div className="section col s12 m12 l6">
               <RevCashChartEx
                 dataPoints={datapointExpenseStackColumn}
                 graph_name={"กระแสเงินสดจ่าย"}
               ></RevCashChartEx>
             </div>
           </div>
-          <div className="section col s12 m3">
+          <div className="section col s12 m4 l3">
             <div className="">
               <CashFlowSensitivity></CashFlowSensitivity>
             </div>

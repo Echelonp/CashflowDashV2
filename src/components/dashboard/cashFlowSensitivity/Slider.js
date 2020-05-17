@@ -4,10 +4,10 @@ import Slider from "@material-ui/core/Slider";
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    width: 300 + theme.spacing(3) * 2,
+    width: 120 + theme.spacing(1) * 2,
   },
   margin: {
-    height: theme.spacing(3),
+    height: theme.spacing(1),
   },
 }));
 

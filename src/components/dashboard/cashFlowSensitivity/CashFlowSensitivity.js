@@ -25,7 +25,7 @@ class CashFlowSensitivity extends Component {
         return eachId !== policyId;
       });
       this.setState({ checkedIdList });
-      console.log("checkedIdList", checkedIdList);
+      // console.log("checkedIdList", checkedIdList);
     }
 
     // create list of policy that contain in checkedIdList
@@ -44,36 +44,36 @@ class CashFlowSensitivity extends Component {
     // console.log("Props : ", this.props.projects.policyList[0].id);
     return (
       <div className="col s12">
-        {/* <Policy
-          policyList={this.props.projects.policyList}
-          policyApply={this.policyApply}
-          sliderValue={this.sliderValue}
-        ></Policy> */}
-
-        <ul id="tabs-swipe-demo" class="tabs">
-          <li class="tab col s4 disabled">
-            <a href="#test-swipe-1">รายรับผู้ใช้ไฟ</a>
-          </li>
-          <li class="tab col s4">
-            <a class="active" href="#test-swipe-2">
+        <ul id="tabs-swipe-demo" className="tabs">
+          <li className="tab col s6">
+            <a
+              className="active"
+              className="grey-text text-darken-3"
+              style={{ fontSize: "20px" }}
+              href="#test-swipe-2"
+            >
               มาตรการ
             </a>
           </li>
-          <li class="tab col s4">
-            <a href="#test-swipe-3">แนวทางแก้ไข</a>
+          <li className="tab col s6">
+            <a
+              href="#test-swipe-3"
+              className="grey-text text-darken-3"
+              style={{ fontSize: "20px" }}
+            >
+              แนวทางแก้ไข
+            </a>
           </li>
         </ul>
-        <div id="test-swipe-1" class="col s12">
-          Test1
-        </div>
-        <div id="test-swipe-2" class="col s12">
+
+        <div id="test-swipe-2" className="col s12">
           <Policy
             policyList={this.props.projects.policyList}
             policyApply={this.policyApply}
             sliderValue={this.sliderValue}
           ></Policy>
         </div>
-        <div id="test-swipe-3" class="col s12">
+        <div id="test-swipe-3" className="col s12">
           Test 3
         </div>
       </div>

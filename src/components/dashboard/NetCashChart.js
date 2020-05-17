@@ -74,22 +74,22 @@ class NetCashChart extends Component {
       data: [
         {
           type: "column",
-          name: "เงินสดรับสุทธิ",
+          name: "เงินรับรวม",
           showInLegend: true,
           yValueFormatString: "MB#,##0",
           dataPoints: datapoint1,
         },
         {
           type: "column",
-          name: "เงินสดจ่ายสุทธิ",
+          name: "เงินจ่ายรวม",
           showInLegend: true,
           xValueFormatString: "MMMM YYYY",
           yValueFormatString: "MB#,##0",
           dataPoints: datapoint2,
         },
         {
-          type: "line",
-          name: "เงินสดคงเหลือสุทธิ(คาดการณ์)",
+          type: "spline",
+          name: "ผลจำลอง CSF",
           markerBorderColor: "white",
           markerBorderThickness: 2,
           showInLegend: true,
@@ -97,8 +97,8 @@ class NetCashChart extends Component {
           dataPoints: datapoint3,
         },
         {
-          type: "line",
-          name: "เงินสดคงเหลือสุทธิ",
+          type: "spline",
+          name: "เงินหมุนเวียนปลายงวด",
           markerBorderColor: "white",
           markerBorderThickness: 2,
           showInLegend: true,
