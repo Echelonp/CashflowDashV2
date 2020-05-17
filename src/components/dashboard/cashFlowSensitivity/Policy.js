@@ -39,9 +39,7 @@ const Policy = (props) => {
   return (
     <div>
       <div className="left-allign">
-        <span style={{ fontSize: "30px" }}>
-          <strong>มาตรการช่วยเหลือ</strong>
-        </span>
+        {/* <span style={{ fontSize: "30px" }}>มาตรการช่วยเหลือ</span> */}
       </div>
 
       <ul className="collapsible">{policyList}</ul>

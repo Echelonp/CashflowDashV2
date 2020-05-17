@@ -2,7 +2,7 @@ import CanvasJSReact from "../canvasjs-2.3.2/canvasjs.react";
 import React, { Component } from "react";
 
 let CanvasJSChart = CanvasJSReact.CanvasJSChart;
-class RevCashChart extends Component {
+class RevCashChartEx extends Component {
   constructor() {
     super();
     this.toggleDataSeries = this.toggleDataSeries.bind(this);
@@ -40,7 +40,7 @@ class RevCashChart extends Component {
       exportEnabled: true,
       zoomEnabled: true,
       panEnabled: true,
-      colorSet: "colorSet1",
+      colorSet: "colorSet2",
 
       title: {
         text: this.props.graph_name,
@@ -73,4 +73,4 @@ class RevCashChart extends Component {
     );
   }
 }
-export default RevCashChart;
+export default RevCashChartEx;

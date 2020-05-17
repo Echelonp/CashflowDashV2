@@ -43,12 +43,39 @@ class CashFlowSensitivity extends Component {
   render() {
     // console.log("Props : ", this.props.projects.policyList[0].id);
     return (
-      <div className="card col s12">
-        <Policy
+      <div className="col s12">
+        {/* <Policy
           policyList={this.props.projects.policyList}
           policyApply={this.policyApply}
           sliderValue={this.sliderValue}
-        ></Policy>
+        ></Policy> */}
+
+        <ul id="tabs-swipe-demo" class="tabs">
+          <li class="tab col s4 disabled">
+            <a href="#test-swipe-1">รายรับผู้ใช้ไฟ</a>
+          </li>
+          <li class="tab col s4">
+            <a class="active" href="#test-swipe-2">
+              มาตรการ
+            </a>
+          </li>
+          <li class="tab col s4">
+            <a href="#test-swipe-3">แนวทางแก้ไข</a>
+          </li>
+        </ul>
+        <div id="test-swipe-1" class="col s12">
+          Test1
+        </div>
+        <div id="test-swipe-2" class="col s12">
+          <Policy
+            policyList={this.props.projects.policyList}
+            policyApply={this.policyApply}
+            sliderValue={this.sliderValue}
+          ></Policy>
+        </div>
+        <div id="test-swipe-3" class="col s12">
+          Test 3
+        </div>
       </div>
     );
   }

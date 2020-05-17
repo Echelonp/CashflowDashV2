@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import NetCashChart from "./NetCashChart";
 import RevCashChart from "./RevCashChart";
+import RevCashChartEx from "./RevCashChartEx";
 import FinancialHighlight from "./FinancialHighlight";
 import CashFlowSensitivity from "./cashFlowSensitivity/CashFlowSensitivity";
 
@@ -60,10 +61,10 @@ class Dashboard extends Component {
             </div>
 
             <div className="section col s12 m6">
-              <RevCashChart
+              <RevCashChartEx
                 dataPoints={datapointExpenseStackColumn}
                 graph_name={"กระแสเงินสดจ่าย"}
-              ></RevCashChart>
+              ></RevCashChartEx>
             </div>
           </div>
           <div className="section col s12 m3">
