@@ -39,7 +39,7 @@ class DayChart extends Component {
       zoomEnabled: true,
       panEnabled: true,
       title: {
-        text: "กราฟรายวัน",
+        text: "กระแสเงินสดรายวัน",
         fontFamily: "verdana",
       },
       axisX: {

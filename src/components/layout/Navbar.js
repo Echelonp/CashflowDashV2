@@ -12,7 +12,7 @@ class Navbar extends Component {
           <div>
             <div>
               <Link to="/" className="brand-logo">
-                กระแสเงินสด
+                {/* กระแสเงินสด */}
               </Link>
             </div>
 
