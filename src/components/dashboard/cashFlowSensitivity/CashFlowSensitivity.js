@@ -74,7 +74,7 @@ class CashFlowSensitivity extends Component {
           ></Policy>
         </div>
         <div id="test-swipe-3" className="col s12">
-          Test 3
+          <span>อยู่ระหว่างดำเนินการ</span>
         </div>
       </div>
     );

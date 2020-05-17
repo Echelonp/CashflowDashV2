@@ -4,8 +4,8 @@ import { BrowserRouter, Switch, Route } from "react-router-dom";
 
 // component
 import Dashboard from "./components/dashboard/Dashboard";
-import CashFlowSensitivity from "./components/dashboard/cashFlowSensitivity/CashFlowSensitivity";
 import Navbar from "./components/layout/Navbar";
+import DayChart from "./components/dashboard/DayChart";
 
 function App() {
   return (
@@ -14,7 +14,7 @@ function App() {
         <Navbar></Navbar>
         <Switch>
           <Route exact path="/" component={Dashboard}></Route>
-          <Route path="/test" component={CashFlowSensitivity}></Route>
+          <Route path="/daychart" component={DayChart}></Route>
         </Switch>
       </div>
     </BrowserRouter>

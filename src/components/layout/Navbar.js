@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
+import { Link } from "react-router-dom";
 
 class Navbar extends Component {
   state = {};
@@ -8,10 +9,21 @@ class Navbar extends Component {
     return (
       <nav>
         <div className="grey darken-3 black-text text-lighten-5 nav-wrapper">
-          <div className="container left-align">
-            <a className="brand-logo">
-              <span>กระแสเงินสด</span>
-            </a>
+          <div>
+            <div>
+              <Link to="/" className="brand-logo">
+                กระแสเงินสด
+              </Link>
+            </div>
+
+            <ul className="right">
+              <li>
+                <Link to="/daychart">กระแสเงินสดรายวัน</Link>
+              </li>
+              <li>
+                <Link to="/">นำเข้าข้อมูล</Link>
+              </li>
+            </ul>
           </div>
         </div>
       </nav>

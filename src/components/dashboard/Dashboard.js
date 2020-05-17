@@ -46,7 +46,7 @@ class Dashboard extends Component {
       <div>
         <div className="row">
           <div className="section col s12 m8 l9">
-            {/* <FinancialHighlight></FinancialHighlight> */}
+            <FinancialHighlight></FinancialHighlight>
             <div className="section col s12 m12">
               <NetCashChart
                 datapointForCombiChart={datapointForCombiChart}
