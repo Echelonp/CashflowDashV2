@@ -4,16 +4,16 @@ import styled from "styled-components";
 const Ptag = styled.p`
   text-align: left;
   /* display: inline-block; */
-  font-size: 24px;
+  font-size: 18px;
   color: #616161;
 `;
 const HighlightValue = styled.span`
-  font-size: 40px;
+  font-size: 25px;
   color: #212121;
   /* float: left; */
 `;
 const UnitValue = styled.span`
-  font-size: 18px;
+  font-size: 14px;
   color: #212121;
   /* float: right; */
 `;
@@ -28,11 +28,11 @@ const Layout = styled.div`
   background-color: #f5f5f5;
 `;
 const PercentPlus = styled.span`
-  font-size: 18px;
+  font-size: 14px;
   color: #64dd17;
 `;
 const PercentMinus = styled.span`
-  font-size: 18px;
+  font-size: 14px;
   color: #d32f2f;
 `;
 

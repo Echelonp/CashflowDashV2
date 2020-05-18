@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import NetCashChart from "./NetCashChart";
+import NetCashChart from "./NetCashChart2";
 import RevCashChart from "./RevCashChart";
 import RevCashChartEx from "./RevCashChartEx";
 import FinancialHighlight from "./FinancialHighlight";

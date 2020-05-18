@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import Policy from "./Policy";
+import SolutionTmp from "./SolutionTmp";
+import { Link } from "react-router-dom";
 import {
   adjustSliderAction,
   checkedPolicyApplyAction,
@@ -46,23 +48,10 @@ class CashFlowSensitivity extends Component {
       <div className="col s12">
         <ul id="tabs-swipe-demo" className="tabs">
           <li className="tab col s6">
-            <a
-              className="active"
-              className="grey-text text-darken-3"
-              style={{ fontSize: "20px" }}
-              href="#test-swipe-2"
-            >
-              มาตรการ
-            </a>
+            <Link to="#test-swipe-2">มาตรการ</Link>
           </li>
           <li className="tab col s6">
-            <a
-              href="#test-swipe-3"
-              className="grey-text text-darken-3"
-              style={{ fontSize: "20px" }}
-            >
-              แนวทางแก้ไข
-            </a>
+            <Link to="#test-swipe-3">แนวทางแก้ไข</Link>
           </li>
         </ul>
 
@@ -74,7 +63,7 @@ class CashFlowSensitivity extends Component {
           ></Policy>
         </div>
         <div id="test-swipe-3" className="col s12">
-          <span>อยู่ระหว่างดำเนินการ</span>
+          <SolutionTmp></SolutionTmp>
         </div>
       </div>
     );

@@ -19,7 +19,7 @@ const Policy = (props) => {
                 ></input>
                 <span
                   className="grey-text text-darken-3"
-                  style={{ fontSize: "18px" }}
+                  style={{ fontSize: "16px" }}
                 >
                   มาตรการที่ {i + 1}
                 </span>
@@ -31,7 +31,7 @@ const Policy = (props) => {
           </div>
         </div>
         <div className="collapsible-body">
-          <span style={{ fontSize: "18px" }}>{policy.namefull}</span>
+          <span style={{ fontSize: "14px" }}>{policy.namefull}</span>
           <div className="container">
             <CustomizedSlider
               policyId={policy.id}
@@ -45,10 +45,6 @@ const Policy = (props) => {
 
   return (
     <div>
-      <div className="left-allign">
-        {/* <span style={{ fontSize: "30px" }}>มาตรการช่วยเหลือ</span> */}
-      </div>
-
       <ul className="collapsible">{policyList}</ul>
     </div>
   );
