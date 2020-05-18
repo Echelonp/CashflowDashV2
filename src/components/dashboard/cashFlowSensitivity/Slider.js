@@ -4,7 +4,7 @@ import Slider from "@material-ui/core/Slider";
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    width: 100 + theme.spacing(1) * 2,
+    width: 90 + theme.spacing(1) * 2,
   },
   margin: {
     height: theme.spacing(1),
@@ -55,7 +55,7 @@ export default function CustomizedSlider({ policyId, sliderValue }) {
         onChange={handleChange}
         valueLabelDisplay="auto"
         aria-label="pretto slider"
-        defaultValue={80}
+        defaultValue={100}
       />
     </div>
   );

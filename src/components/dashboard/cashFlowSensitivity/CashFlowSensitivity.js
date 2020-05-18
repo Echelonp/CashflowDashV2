@@ -37,13 +37,20 @@ class CashFlowSensitivity extends Component {
     // console.log("policyListApply", policyListApply);
     this.props.checkedPolicyApplyAction(policyListApply);
   };
-
-  sliderValue = (newValue, policyId) => {
+  policySliderValue = (newValue, policyId) => {
     console.log(newValue, policyId);
     this.props.adjustSliderAction(newValue, policyId);
   };
+
+  solutionApply = (solutionId, chechedValue) => {
+    console.log("solutionApply", solutionId, chechedValue);
+  };
+  solutionSliderValue = (newValue, solutionId) => {
+    console.log(newValue, solutionId);
+  };
+
   render() {
-    // console.log("Props : ", this.props.projects.policyList[0].id);
+    // console.log("Props : ", this.props.projects.solutionList);
     return (
       <div className="col s12">
         <ul id="tabs-swipe-demo" className="tabs">
@@ -59,11 +66,15 @@ class CashFlowSensitivity extends Component {
           <Policy
             policyList={this.props.projects.policyList}
             policyApply={this.policyApply}
-            sliderValue={this.sliderValue}
+            sliderValue={this.policySliderValue}
           ></Policy>
         </div>
         <div id="test-swipe-3" className="col s12">
-          <SolutionTmp></SolutionTmp>
+          <SolutionTmp
+            solutionList={this.props.projects.solutionList}
+            solutionApply={this.solutionApply}
+            solutionSliderValue={this.solutionSliderValue}
+          ></SolutionTmp>
         </div>
       </div>
     );
