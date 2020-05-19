@@ -45,7 +45,7 @@ class Dashboard extends Component {
     return (
       <div>
         <div className="row">
-          <div className="section col s12 m8 l9">
+          <div className="section col s12 m9">
             <FinancialHighlight></FinancialHighlight>
             <div className="section col s12 m12">
               <NetCashChart
@@ -67,7 +67,7 @@ class Dashboard extends Component {
               ></RevCashChartEx>
             </div>
           </div>
-          <div className="section col s12 m4 l3">
+          <div className="section col s12 m3">
             <div className="">
               <CashFlowSensitivity></CashFlowSensitivity>
             </div>

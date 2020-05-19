@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import DatePicker from "react-datepicker";
+import SolutionList from "./SolutionList";
 
 class Solution extends Component {
   state = {
@@ -8,99 +8,30 @@ class Solution extends Component {
   };
 
   handleDatePickleChange = (date) => {
-    console.log("HnadleChange", date.getMonth());
+    console.log("HandleChange", date.getMonth());
     this.setState({ startDate: date });
-  };
-
-  dateTest = () => {
-    return (
-      <DatePicker
-        selected={this.state.startDate}
-        onChange={this.handleDatePickleChange}
-        dateFormat="MM/yyyy"
-        showMonthYearPicker
-        showFullMonthYearPicker
-      />
-    );
   };
   render() {
     return (
       <div className="row">
         <div className="col s4">
-          <p>แนวทางแก้ไข</p>
+          <h5>แนวทางแก้ไข</h5>
           <ul className="">
-            <li>
-              {/* 1st list */}
-              <div>
-                <label>
-                  <input
-                    type="checkbox"
-                    id="solution1"
-                    className="filled-in"
-                  ></input>
-                  <span>นำจ่ายรายได้แผ่นดิน</span>
-                </label>
-
-                <div className="row">
-                  {/* 1.Header */}
-                  <div className="col s12">
-                    <div className="col s2">{/* <span>เพิ่ม</span> */}</div>
-                    <div className="col s5">
-                      <span>จำนวนเงิน ลบ.</span>
-                    </div>
-                    <div className="col s5">
-                      <span>ชำระในเดือน</span>
-                    </div>
-                  </div>
-                  {/* 1.1 */}
-                  <div className="col s12">
-                    <div className="col s2">
-                      <span>1.</span>
-                    </div>
-                    <div className="col s5">
-                      <input
-                        // placeholder="จำนวนเงิน ลบ."
-                        id="returnRevToState"
-                        type="number"
-                        className="validate"
-                      ></input>
-                    </div>
-                    <div className="col s5">
-                      <DatePicker
-                        selected={this.state.startDate}
-                        onChange={this.handleDatePickleChange}
-                        dateFormat="MM/yyyy"
-                        showMonthYearPicker
-                        showFullMonthYearPicker
-                      />
-                    </div>
-                  </div>
-                  {/* 1.2 */}
-                  <div className="col s12">
-                    <div className="col s2">
-                      <span>2.</span>
-                    </div>
-                    <div className="col s5">
-                      <input
-                        // placeholder="จำนวนเงิน ลบ."
-                        id="returnRevToState"
-                        type="number"
-                        className="validate"
-                      ></input>
-                    </div>
-                    <div className="col s5">
-                      <DatePicker
-                        selected={this.state.startDate}
-                        onChange={this.handleDatePickleChange}
-                        dateFormat="MM/yyyy"
-                        showMonthYearPicker
-                        showFullMonthYearPicker
-                      />
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </li>
+            <SolutionList
+              name={"นำจ่ายรายได้แผ่นดิน"}
+              id={421}
+              revSide={false}
+            ></SolutionList>
+            <SolutionList
+              name={"ค่าปรับลงทุนต่ำกว่าแผน"}
+              id={422}
+              revSide={false}
+            ></SolutionList>
+            <SolutionList
+              name={"ค่าซื้อกระแสไฟฟ้า EGAT"}
+              id={423}
+              revSide={false}
+            ></SolutionList>
           </ul>
         </div>
       </div>
