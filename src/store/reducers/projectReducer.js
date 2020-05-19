@@ -753,6 +753,9 @@ const initState = {
   ],
   // PolicyChecked
   PolicyCheckedList: [],
+
+  // SolutionChecked
+  SolutionCheckedList: [],
 };
 
 const projectReducer = (state = initState, action) => {
@@ -789,11 +792,16 @@ const projectReducer = (state = initState, action) => {
           return -1;
         }
       });
-
       return {
         ...state,
         policyList: newPolicy,
       };
+    case "CHECKED_SOLUTION":
+      console.log("CHECKED_SOLUTION", action);
+      return state;
+    case "UNCHECKED_SOLUTION":
+      console.log("UNCHECKED_SOLUTION", action);
+      return state;
     default:
       return state;
   }

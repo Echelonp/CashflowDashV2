@@ -12,3 +12,17 @@ export const adjustSliderAction = (sliderValue, policyId) => {
     policyId: policyId,
   };
 };
+
+export const checkedSolutionAction = (newSolution) => {
+  return {
+    type: "CHECKED_SOLUTION",
+    newSolution: newSolution,
+  };
+};
+
+export const unCheckedSolutionAction = (solutionId) => {
+  return {
+    type: "UNCHECKED_SOLUTION",
+    solutionId: solutionId,
+  };
+};

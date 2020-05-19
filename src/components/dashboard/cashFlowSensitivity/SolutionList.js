@@ -1,8 +1,16 @@
 import React, { Component } from "react";
+import { connect } from "react-redux";
 import DatePicker from "react-datepicker";
+import {
+  checkedSolutionAction,
+  unCheckedSolutionAction,
+} from "../../../store/actions/CashFlowSensitivityActions";
 
+// This component for solution after first five solutions
+// This solution we can add new value and specify the month for it
 class SolutionList extends Component {
   state = {
+    checkedSolutionList: [],
     date1: new Date(),
     date2: new Date(),
     solutionAmount1: 0,
@@ -38,6 +46,8 @@ class SolutionList extends Component {
       [e.target.id.slice(0, 15)]: parseFloat(e.target.value),
     });
   };
+
+  //when we checked this fn is going to call dispatch fn then update state data in Project reducer
   handleChecked = (e) => {
     if (e.target.checked) {
       let dic1 = {
@@ -70,15 +80,15 @@ class SolutionList extends Component {
         -1 * this.state.solutionAmount1;
       dic1.cash[this.state.monthsShort[this.state.date2.getMonth()]] +=
         -1 * this.state.solutionAmount2;
-      let testStr = "12345";
-      console.log(testStr.slice(0, 3));
-      //   log zone
-      console.log(dic1);
-      console.log(this.state.monthsShort[this.state.date1.getMonth()]);
+      this.props.checkedSolutionAction(dic1);
+    } else {
+      this.props.unCheckedSolutionAction(this.props.id);
+      //   console.log(this.props.id);
     }
   };
+
   componentDidUpdate = () => {
-    // console.log("State", this.state);
+    console.log("Solution list state", this.state);
   };
 
   render() {
@@ -177,4 +187,15 @@ class SolutionList extends Component {
   }
 }
 
-export default SolutionList;
+const mapDispatchToProps = (dispatch) => {
+  return {
+    checkedSolutionAction: (newSolution) => {
+      dispatch(checkedSolutionAction(newSolution));
+    },
+    unCheckedSolutionAction: (solutionId) => {
+      dispatch(unCheckedSolutionAction(solutionId));
+    },
+  };
+};
+
+export default connect(null, mapDispatchToProps)(SolutionList);

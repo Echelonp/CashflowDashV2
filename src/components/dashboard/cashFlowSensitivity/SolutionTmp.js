@@ -1,8 +1,9 @@
 import React from "react";
 import CustomizedSlider from "./Slider";
 
+// This component for five solutions in the solution list
 const SolutionTmp = (props) => {
-  console.log("SolutionTmp", props);
+  // console.log("SolutionTmp", props);
   const solutionList = props.solutionList.map((solution, i) => {
     return (
       <li className="active" key={solution.id}>
