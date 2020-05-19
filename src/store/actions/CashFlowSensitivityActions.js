@@ -13,6 +13,21 @@ export const adjustSliderAction = (sliderValue, policyId) => {
   };
 };
 
+export const checked5thSolutionAction = (newSolutionList) => {
+  return {
+    type: "CHECKED_5TH_SOLUTION",
+    newSolutionList: newSolutionList,
+  };
+};
+
+export const adjustSliderActionSolution = (sliderValue, solutionId) => {
+  return {
+    type: "ADJUST_SLIDER_SOLUTION",
+    sliderValue: sliderValue,
+    solutionId: solutionId,
+  };
+};
+
 export const checkedSolutionAction = (newSolution) => {
   return {
     type: "CHECKED_SOLUTION",

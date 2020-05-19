@@ -10,7 +10,10 @@ import {
 
 class CashFlowSensitivity extends Component {
   state = {
+    // This checkedIdList for policy
     checkedIdList: [],
+    // List for checked solution
+    solutionCheckedIdList: [],
   };
 
   policyApply = (policyId, checkedValue) => {
@@ -42,6 +45,7 @@ class CashFlowSensitivity extends Component {
     this.props.adjustSliderAction(newValue, policyId);
   };
 
+  // fn for solution
   solutionApply = (solutionId, chechedValue) => {
     console.log("solutionApply", solutionId, chechedValue);
   };

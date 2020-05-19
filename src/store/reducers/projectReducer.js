@@ -644,6 +644,7 @@ const initState = {
       id: 401,
       namefull: "ได้รับเงินอุดหนุนจาก กกพ",
       name: "ได้รับเงินอุดหนุนจาก กกพ",
+      factorCoporate: 100,
       revSide: true,
       baseChart: true,
       breakdownDis: true,
@@ -666,6 +667,7 @@ const initState = {
       id: 402,
       namefull: "ยืมเงินกองทุนประกันการใช้ไฟฟ้า",
       name: "ยืมเงินกองทุนประกันการใช้ไฟฟ้า",
+      factorCoporate: 100,
       revSide: true,
       baseChart: true,
       breakdownDis: true,
@@ -688,6 +690,7 @@ const initState = {
       id: 403,
       namefull: "นำส่งรายได้แผ่นดินเท่ากับกำไรจริงของ กฟภ.",
       name: "นำส่งรายได้แผ่นดินเท่ากับกำไรจริงของ กฟภ.",
+      factorCoporate: 100,
       revSide: false,
       baseChart: true,
       breakdownDis: true,
@@ -710,6 +713,7 @@ const initState = {
       id: 404,
       namefull: "เลื่อนนำส่งรายได้แผ่นดิน",
       name: "เลื่อนนำส่งรายได้แผ่นดิน",
+      factorCoporate: 100,
       revSide: false,
       baseChart: true,
       breakdownDis: true,
@@ -732,6 +736,7 @@ const initState = {
       id: 405,
       namefull: "เลื่อนชำระค่าซื้อกระแสไฟฟ้า กฟผ.",
       name: "เลื่อนชำระค่าซื้อกระแสไฟฟ้า กฟผ.",
+      factorCoporate: 100,
       revSide: false,
       baseChart: true,
       breakdownDis: true,
@@ -797,11 +802,22 @@ const projectReducer = (state = initState, action) => {
         policyList: newPolicy,
       };
     case "CHECKED_SOLUTION":
-      console.log("CHECKED_SOLUTION", action);
-      return state;
+      // console.log("CHECKED_SOLUTION", action);
+      const newSolutionCheckedList = [
+        ...state.SolutionCheckedList,
+        action.newSolution,
+      ];
+      console.log("CHECKED_SOLUTION", newSolutionCheckedList);
+      return { ...state, SolutionCheckedList: newSolutionCheckedList };
     case "UNCHECKED_SOLUTION":
       console.log("UNCHECKED_SOLUTION", action);
-      return state;
+      const newUnSolutionCheckedList = state.SolutionCheckedList.filter(
+        (solution) => {
+          return solution.id !== action.solutionId;
+        }
+      );
+      console.log("UNCHECKED_SOLUTION", newUnSolutionCheckedList);
+      return { ...state, SolutionCheckedList: newUnSolutionCheckedList };
     default:
       return state;
   }

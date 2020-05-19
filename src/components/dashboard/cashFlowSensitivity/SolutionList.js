@@ -6,7 +6,7 @@ import {
   unCheckedSolutionAction,
 } from "../../../store/actions/CashFlowSensitivityActions";
 
-// This component for solution after first five solutions
+// This component for solution after first 5th solutions
 // This solution we can add new value and specify the month for it
 class SolutionList extends Component {
   state = {
@@ -57,6 +57,7 @@ class SolutionList extends Component {
         revSide: false,
         baseChart: true,
         breakdownDis: true,
+        factorCoporate: 100,
         cash: {
           Jan: 0,
           Feb: 0,
@@ -88,7 +89,7 @@ class SolutionList extends Component {
   };
 
   componentDidUpdate = () => {
-    console.log("Solution list state", this.state);
+    // console.log("Solution list state", this.state);
   };
 
   render() {
