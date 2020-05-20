@@ -3,8 +3,10 @@ import { connect } from "react-redux";
 import NetCashChart from "./NetCashChart2";
 import RevCashChart from "./RevCashChart";
 import RevCashChartEx from "./RevCashChartEx";
+import DayChart from "./DayChart";
 import FinancialHighlight from "./FinancialHighlight";
 import CashFlowSensitivity from "./cashFlowSensitivity/CashFlowSensitivity";
+import { Link } from "react-router-dom";
 
 // fn
 import {
@@ -25,8 +27,8 @@ class Dashboard extends Component {
         return solution.revSide !== true;
       }
     );
-    console.log("solutionListIncomeSide", solutionListIncomeSide);
-    console.log("solutionListExpenseSide", solutionListExpenseSide);
+    // console.log("solutionListIncomeSide", solutionListIncomeSide);
+    // console.log("solutionListExpenseSide", solutionListExpenseSide);
 
     const newCashIncome = this.props.projects.cashIncome
       .concat(this.props.projects.PolicyCheckedList, solutionListIncomeSide)
@@ -71,26 +73,50 @@ class Dashboard extends Component {
         <div className="row">
           <div className="section col s12 m9">
             <FinancialHighlight></FinancialHighlight>
-            <div className="section col s12 m12">
-              <NetCashChart
-                datapointForCombiChart={datapointForCombiChart}
-              ></NetCashChart>
-            </div>
 
-            <div className="section col s12 m12 l6">
-              <RevCashChart
-                dataPoints={datapointIncomeStackColumn}
-                graph_name={"กระแสเงินสดรับ"}
-              ></RevCashChart>
-            </div>
+            {/* Insert TAP */}
+            <div className="row">
+              <div className="col s12">
+                <ul className="tabs">
+                  <li className="tab col s6 m4">
+                    <a href="#netRev">เงินหมุนเวียนคงเหลือรายเดือน</a>
+                  </li>
+                  <li className="tab col s6 m4">
+                    <a href="#daylychart">เงินหมุนเวียนคงเหลือรายวัน</a>
+                  </li>
+                  <li className="tab col s6 m4">
+                    <a href="#breakdown">รายละเอียดรายรับ-จ่าย</a>
+                  </li>
+                </ul>
+              </div>
+              {/* 1st Tab */}
+              <div className="col s12" id="netRev">
+                <NetCashChart
+                  datapointForCombiChart={datapointForCombiChart}
+                ></NetCashChart>
+              </div>
+              {/* 2nd Tab */}
+              <div className="col s12" id="breakdown">
+                <div className="section col s12 m12 l6">
+                  <RevCashChart
+                    dataPoints={datapointIncomeStackColumn}
+                    graph_name={"กระแสเงินสดรับ"}
+                  ></RevCashChart>
+                </div>
+                <div className="section col s12 m12 l6">
+                  <RevCashChartEx
+                    dataPoints={datapointExpenseStackColumn}
+                    graph_name={"กระแสเงินสดจ่าย"}
+                  ></RevCashChartEx>
+                </div>
+              </div>
 
-            <div className="section col s12 m12 l6">
-              <RevCashChartEx
-                dataPoints={datapointExpenseStackColumn}
-                graph_name={"กระแสเงินสดจ่าย"}
-              ></RevCashChartEx>
+              <div className="col s12" id="daylychart">
+                <DayChart></DayChart>
+              </div>
             </div>
           </div>
+          {/* CashFlowSensitivity zone */}
           <div className="section col s12 m3">
             <div className="">
               <CashFlowSensitivity></CashFlowSensitivity>
