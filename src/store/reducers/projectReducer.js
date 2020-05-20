@@ -646,7 +646,7 @@ const initState = {
       name: "ได้รับเงินอุดหนุนจาก กกพ",
       factorCoporate: 100,
       revSide: true,
-      baseChart: true,
+      baseChart: false,
       breakdownDis: true,
       cash: {
         Jan: 0,
@@ -669,7 +669,7 @@ const initState = {
       name: "ยืมเงินกองทุนประกันการใช้ไฟฟ้า",
       factorCoporate: 100,
       revSide: true,
-      baseChart: true,
+      baseChart: false,
       breakdownDis: true,
       cash: {
         Jan: 0,
@@ -692,7 +692,7 @@ const initState = {
       name: "นำส่งรายได้แผ่นดินเท่ากับกำไรจริงของ กฟภ.",
       factorCoporate: 100,
       revSide: false,
-      baseChart: true,
+      baseChart: false,
       breakdownDis: true,
       cash: {
         Jan: 0,
@@ -715,7 +715,7 @@ const initState = {
       name: "เลื่อนนำส่งรายได้แผ่นดิน",
       factorCoporate: 100,
       revSide: false,
-      baseChart: true,
+      baseChart: false,
       breakdownDis: true,
       cash: {
         Jan: 0,
@@ -738,7 +738,7 @@ const initState = {
       name: "เลื่อนชำระค่าซื้อกระแสไฟฟ้า กฟผ.",
       factorCoporate: 100,
       revSide: false,
-      baseChart: true,
+      baseChart: false,
       breakdownDis: true,
       cash: {
         Jan: 0,
@@ -761,6 +761,7 @@ const initState = {
 
   // SolutionChecked
   SolutionCheckedList: [],
+  SolutionCheckedList5th: [],
 };
 
 const projectReducer = (state = initState, action) => {
@@ -809,6 +810,7 @@ const projectReducer = (state = initState, action) => {
       ];
       console.log("CHECKED_SOLUTION", newSolutionCheckedList);
       return { ...state, SolutionCheckedList: newSolutionCheckedList };
+
     case "UNCHECKED_SOLUTION":
       console.log("UNCHECKED_SOLUTION", action);
       const newUnSolutionCheckedList = state.SolutionCheckedList.filter(
@@ -818,6 +820,37 @@ const projectReducer = (state = initState, action) => {
       );
       console.log("UNCHECKED_SOLUTION", newUnSolutionCheckedList);
       return { ...state, SolutionCheckedList: newUnSolutionCheckedList };
+
+    case "CHECKED_5TH_SOLUTION":
+      console.log("CHECKED_5TH_SOLUTION", action);
+      return { ...state, SolutionCheckedList5th: action.newSolutionLis };
+
+    case "ADJUST_SLIDER_SOLUTION":
+      console.log("ADJUST_SLIDER_SOLUTION", action);
+      const selectedSolution = state.solutionList.filter((solution) => {
+        return solution.id === action.solutionId;
+      });
+      const nonSelectedSolution = state.solutionList.filter((solution) => {
+        return solution.id !== action.solutionId;
+      });
+      // Update value in slelcted solution
+      selectedSolution[0].factorCoporate = action.sliderValue;
+      let selectedSolution5th_tmp = selectedSolution[0];
+
+      let newSolution5th = [].concat(selectedSolution5th_tmp);
+      newSolution5th = newSolution5th.concat(nonSelectedSolution);
+      // console.log("newSolution5th", newSolution5th);
+
+      // reorder
+      newSolution5th.sort((a, b) => {
+        if (a.id > b.id) {
+          return 1;
+        } else {
+          return -1;
+        }
+      });
+
+      return { ...state, solutionList: newSolution5th };
     default:
       return state;
   }

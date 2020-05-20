@@ -55,7 +55,7 @@ class SolutionList extends Component {
         namefull: "name",
         name: "name",
         revSide: false,
-        baseChart: true,
+        baseChart: false,
         breakdownDis: true,
         factorCoporate: 100,
         cash: {

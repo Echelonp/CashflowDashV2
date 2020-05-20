@@ -6,6 +6,8 @@ import { Link } from "react-router-dom";
 import {
   adjustSliderAction,
   checkedPolicyApplyAction,
+  checked5thSolutionAction,
+  adjustSliderActionSolution,
 } from "../../../store/actions/CashFlowSensitivityActions";
 
 class CashFlowSensitivity extends Component {
@@ -47,14 +49,43 @@ class CashFlowSensitivity extends Component {
 
   // fn for solution
   solutionApply = (solutionId, chechedValue) => {
-    console.log("solutionApply", solutionId, chechedValue);
+    // console.log("solutionApply", solutionId, chechedValue);
+    let solutionCheckedList = [];
+    if (chechedValue) {
+      solutionCheckedList = [...this.state.solutionCheckedIdList, solutionId];
+      this.setState({
+        solutionCheckedIdList: solutionCheckedList,
+      });
+    } else {
+      solutionCheckedList = this.state.solutionCheckedIdList.filter(
+        (eachSolution) => {
+          return eachSolution !== solutionId;
+        }
+      );
+      this.setState({
+        solutionCheckedIdList: solutionCheckedList,
+      });
+    }
+    // Create list of solutions from solutionCheckedIdList
+    const solutionListApply = this.props.projects.solutionList.filter(
+      (solution) => {
+        return solutionCheckedList.indexOf(solution.id) !== -1;
+      }
+    );
+    // console.log("solutionListApply", solutionListApply);
+    this.props.checked5thSolutionAction(solutionListApply);
   };
+
   solutionSliderValue = (newValue, solutionId) => {
-    console.log(newValue, solutionId);
+    // console.log(newValue, solutionId);
+    this.props.adjustSliderActionSolution(newValue, solutionId);
+  };
+  componentDidUpdate = () => {
+    // console.log("STATE", this.state.solutionCheckedIdList);
   };
 
   render() {
-    // console.log("Props : ", this.props.projects.solutionList);
+    // console.log("Props : ", this.props);
     return (
       <div className="col s12">
         <ul id="tabs-swipe-demo" className="tabs">
@@ -99,6 +130,12 @@ const mapDispatchToProps = (dispatch) => {
     },
     adjustSliderAction: (sliderValue, policyId) => {
       dispatch(adjustSliderAction(sliderValue, policyId));
+    },
+    checked5thSolutionAction: (newSolution) => {
+      dispatch(checked5thSolutionAction(newSolution));
+    },
+    adjustSliderActionSolution: (sliderValue, solutionId) => {
+      dispatch(adjustSliderActionSolution(sliderValue, solutionId));
     },
   };
 };
