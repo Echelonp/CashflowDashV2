@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import Policy from "./Policy";
 import SolutionTmp from "./SolutionTmp";
+import Solution from "./Solution";
 import { Link } from "react-router-dom";
 import {
   adjustSliderAction,
@@ -85,15 +86,18 @@ class CashFlowSensitivity extends Component {
   };
 
   render() {
-    // console.log("Props : ", this.props);
+    console.log("Props : ", this.props);
     return (
       <div className="col s12">
         <ul id="tabs-swipe-demo" className="tabs">
-          <li className="tab col s6">
+          <li className="tab col s4">
             <Link to="#test-swipe-2">มาตรการ</Link>
           </li>
-          <li className="tab col s6">
+          <li className="tab col s4">
             <Link to="#test-swipe-3">แนวทางแก้ไข</Link>
+          </li>
+          <li className="tab col s4">
+            <Link to="#test-swipe-4">เพิ่มแนวทางแก้ไข</Link>
           </li>
         </ul>
 
@@ -110,6 +114,9 @@ class CashFlowSensitivity extends Component {
             solutionApply={this.solutionApply}
             solutionSliderValue={this.solutionSliderValue}
           ></SolutionTmp>
+        </div>
+        <div id="test-swipe-4" className="col s12">
+          <Solution></Solution>
         </div>
       </div>
     );

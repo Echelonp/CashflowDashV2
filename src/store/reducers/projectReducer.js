@@ -823,7 +823,7 @@ const projectReducer = (state = initState, action) => {
 
     case "CHECKED_5TH_SOLUTION":
       console.log("CHECKED_5TH_SOLUTION", action);
-      return { ...state, SolutionCheckedList5th: action.newSolutionLis };
+      return { ...state, SolutionCheckedList5th: action.newSolutionList };
 
     case "ADJUST_SLIDER_SOLUTION":
       console.log("ADJUST_SLIDER_SOLUTION", action);
