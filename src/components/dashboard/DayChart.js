@@ -39,7 +39,7 @@ class DayChart extends Component {
       zoomEnabled: true,
       panEnabled: true,
       title: {
-        text: "กระแสเงินสดรายวัน",
+        text: "เงินหมุนเวียนคงเหลือรายวัน",
         fontFamily: "verdana",
       },
       axisX: {

@@ -7,7 +7,7 @@ import Dashboard from "./components/dashboard/Dashboard";
 // import Navbar from "./components/layout/Navbar";
 import DayChart from "./components/dashboard/DayChart";
 import Solution from "./components/dashboard/cashFlowSensitivity/Solution";
-import CashFlowSensitivityBootsrap from "./components/dashboard/cashFlowSensitivity/CashFlowSensitivityv2";
+import Table from "./components/dashboard/Table";
 
 function App() {
   return (
@@ -18,7 +18,7 @@ function App() {
           <Route exact path="/" component={Dashboard}></Route>
           <Route path="/daychart" component={DayChart}></Route>
           <Route path="/solution" component={Solution}></Route>
-          <Route path="/test" component={CashFlowSensitivityBootsrap}></Route>
+          <Route path="/test" component={Table}></Route>
         </Switch>
       </div>
     </BrowserRouter>

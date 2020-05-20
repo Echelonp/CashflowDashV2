@@ -1,12 +1,14 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
+import { Link } from "react-router-dom";
+
 import NetCashChart from "./NetCashChart";
 import RevCashChart from "./RevCashChart";
 import RevCashChartEx from "./RevCashChartEx";
 import DayChart from "./DayChart";
 import FinancialHighlight from "./FinancialHighlight";
 import CashFlowSensitivity from "./cashFlowSensitivity/CashFlowSensitivity";
-import { Link } from "react-router-dom";
+import Table from "./Table";
 
 // fn
 import {
@@ -17,6 +19,7 @@ import {
 class Dashboard extends Component {
   render() {
     // console.log("Props Dash:", this.props);
+    // console.log("Props Dash:", this.props.projects.cashIncome);
     const solutionListIncomeSide = this.props.projects.SolutionCheckedList5th.filter(
       (solution) => {
         return solution.revSide === true;
@@ -112,6 +115,23 @@ class Dashboard extends Component {
               <div className="col s12" id="daylychart">
                 <DayChart></DayChart>
               </div>
+              {/* Table */}
+              <div className="col s12">
+                <div className="row">
+                  <div className="col s12 m6">
+                    <Table
+                      data={newCashIncome}
+                      nameChart="รายรับประจำเดือน"
+                    ></Table>
+                  </div>
+                  <div className="col s12 m6">
+                    <Table
+                      data={newCashExpense}
+                      nameChart="รายจ่ายประจำเดือน"
+                    ></Table>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
           {/* CashFlowSensitivity zone */}
@@ -121,8 +141,6 @@ class Dashboard extends Component {
             </div>
           </div>
         </div>
-        {/* Test zone */}
-        <div>{/* Test */}</div>
       </div>
     );
   }
