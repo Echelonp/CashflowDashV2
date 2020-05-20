@@ -6,6 +6,8 @@ const Ptag = styled.p`
   /* display: inline-block; */
   font-size: 18px;
   color: #616161;
+  margin-bottom: 0px;
+  margin-top: 2px;
 `;
 const HighlightValue = styled.span`
   font-size: 25px;
@@ -14,11 +16,12 @@ const HighlightValue = styled.span`
 `;
 const UnitValue = styled.span`
   font-size: 14px;
-  color: #212121;
+  color: #9e9e9e;
   /* float: right; */
 `;
 const Layout = styled.div`
-  color: black;
+  color: #0277bd;
+  background-color: lightblue;
   /* border: 2px solid grey; */
   margin-top: 5px;
   margin-bottom: 5px;
@@ -36,18 +39,50 @@ const PercentMinus = styled.span`
   color: #d32f2f;
 `;
 
-function FinancialHighLight(params) {
+function FinancialHighLight(props) {
+  console.log(props.data);
+  const dateTest = new Date();
+  // console.log(
+  //   props.data[0]["datapointsCashIncomeMonthTotal"][dateTest.getMonth()]["y"]
+  // );
+  console.log(
+    props.data[1]["datapointsCashExpenseMonthTotal"][dateTest.getMonth()]["y"]
+  );
+  console.log("DateDay", dateTest.getDate() * 2);
+  console.log("DateMonth", dateTest.getMonth());
+
+  // This day
+  const cashIncome =
+    props.data[0]["datapointsCashIncomeMonthTotal"][dateTest.getMonth()]["y"];
+  const cashExpense =
+    props.data[1]["datapointsCashExpenseMonthTotal"][dateTest.getMonth()]["y"];
+  const cashNet = cashIncome + cashExpense;
+  const cashBalance =
+    props.data[2]["datapointsNetMonthTotal"][dateTest.getMonth()]["y"];
+  const cashInit = cashBalance - cashNet;
+
+  console.log("cashNet", cashNet);
+  console.log("cashbalance", cashBalance);
+  console.log("cashInit", cashInit);
+  // Number((6.688689).toFixed(1));
+  console.log(
+    "Devision Test",
+    Number((cashIncome * dateTest.getDate()) / 30).toFixed(1)
+  );
+
   return (
     <div>
       <div className="col s12 m3">
         <Layout>
           <Ptag>ยอดคงเหลือ</Ptag>
-          <HighlightValue>19,643</HighlightValue>
+          <HighlightValue>
+            {Number((cashBalance * dateTest.getDate()) / 30).toFixed(1)}
+          </HighlightValue>
           <UnitValue> ล้านบาท</UnitValue>
           <div>
             <span>
-              <i className="material-icons Tiny green">call_made</i>
-              <PercentPlus> +12% (0.345 ล้านบาท) </PercentPlus>
+              <i className="tiny material-icons">call_made</i>
+              <PercentPlus>+12%(0.345ลบ.)</PercentPlus>
             </span>
           </div>
         </Layout>
@@ -56,12 +91,14 @@ function FinancialHighLight(params) {
       <div className="col s12 m3">
         <Layout>
           <Ptag>ผลต่าง รับ-จ่าย</Ptag>
-          <HighlightValue>10,575</HighlightValue>
+          <HighlightValue>
+            {Number((cashNet * dateTest.getDate()) / 30).toFixed(1)}
+          </HighlightValue>
           <UnitValue> ล้านบาท</UnitValue>
           <div>
             <span>
-              <i className="material-icons Tiny red">call_received</i>
-              <PercentMinus> -8% (0.345 ล้านบาท) </PercentMinus>
+              <i className="tiny material-icons">call_received</i>
+              <PercentMinus>-8%(0.345ลบ.)</PercentMinus>
             </span>
           </div>
         </Layout>
@@ -69,12 +106,14 @@ function FinancialHighLight(params) {
       <div className="col s12 m3">
         <Layout>
           <Ptag>รวมเงินรับ</Ptag>
-          <HighlightValue>55,822</HighlightValue>
+          <HighlightValue>
+            {Number((cashIncome * dateTest.getDate()) / 30).toFixed(1)}
+          </HighlightValue>
           <UnitValue> ล้านบาท</UnitValue>
           <div>
             <span>
-              <i className="material-icons Tiny green">call_made</i>
-              <PercentPlus> +12% (0.345 ล้านบาท) </PercentPlus>
+              <i className="tiny material-icons">call_made</i>
+              <PercentPlus>+12%(0.345ลบ.)</PercentPlus>
             </span>
           </div>
         </Layout>
@@ -82,12 +121,14 @@ function FinancialHighLight(params) {
       <div className="col s12 m3">
         <Layout>
           <Ptag>รวมเงินจ่าย</Ptag>
-          <HighlightValue>45,247</HighlightValue>
+          <HighlightValue>
+            {-1 * Number((cashExpense * dateTest.getDate()) / 30).toFixed(1)}
+          </HighlightValue>
           <UnitValue> ล้านบาท</UnitValue>
           <div>
             <span>
-              <i className="material-icons Tiny red">call_made</i>
-              <PercentMinus> -12% (0.345 ล้านบาท) </PercentMinus>
+              <i className="tiny material-icons">call_received</i>
+              <PercentMinus>-12%(0.345ลบ.)</PercentMinus>
             </span>
           </div>
         </Layout>

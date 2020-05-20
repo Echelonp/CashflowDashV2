@@ -7,6 +7,7 @@ import RevCashChart from "./RevCashChart";
 import RevCashChartEx from "./RevCashChartEx";
 import DayChart from "./DayChart";
 import FinancialHighlight from "./FinancialHighlight";
+import HeaderMe from "./Header";
 import CashFlowSensitivity from "./cashFlowSensitivity/CashFlowSensitivity";
 import Table from "./Table";
 
@@ -59,6 +60,7 @@ class Dashboard extends Component {
       this.props.projects.cashInit,
       this.props.projects.monthsShort
     );
+    // console.log("datapointForCombiChart", datapointForCombiChart);
 
     const datapointIncomeStackColumn = cashToDatapointForStackedColumn(
       newCashIncome,
@@ -74,7 +76,10 @@ class Dashboard extends Component {
       <div>
         <div className="row">
           <div className="section col s12 m9">
-            <FinancialHighlight></FinancialHighlight>
+            <HeaderMe></HeaderMe>
+            <FinancialHighlight
+              data={datapointForCombiChart}
+            ></FinancialHighlight>
             {/* Insert TAP */}
             <div className="row">
               <div className="col s12">

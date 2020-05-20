@@ -1,7 +1,7 @@
 import React from "react";
 
 const Table = (props) => {
-  console.log("Table", props);
+  //   console.log("Table", props);
   const dataIn = props.data.sort((a, b) => {
     if (a.cash["May"] < b.cash["May"]) {
       return 1;
