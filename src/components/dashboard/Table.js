@@ -2,7 +2,15 @@ import React from "react";
 
 const Table = (props) => {
   console.log("Table", props);
-  const tableList = props.data.map((data, i) => {
+  const dataIn = props.data.sort((a, b) => {
+    if (a.cash["May"] < b.cash["May"]) {
+      return 1;
+    } else {
+      return -1;
+    }
+  });
+
+  const tableList = dataIn.map((data, i) => {
     return (
       <tr key={data.id}>
         <td>{data.name}</td>
