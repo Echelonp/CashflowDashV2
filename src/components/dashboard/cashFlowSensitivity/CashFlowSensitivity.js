@@ -90,14 +90,11 @@ class CashFlowSensitivity extends Component {
     return (
       <div className="col s12">
         <ul id="tabs-swipe-demo" className="tabs">
-          <li className="tab col s4">
+          <li className="tab col s6">
             <Link to="#test-swipe-2">มาตรการ</Link>
           </li>
-          <li className="tab col s4">
+          <li className="tab col s6">
             <Link to="#test-swipe-3">แนวทางแก้ไข</Link>
-          </li>
-          <li className="tab col s4">
-            <Link to="#test-swipe-4">เพิ่มแนวทางแก้ไข</Link>
           </li>
         </ul>
 
@@ -114,9 +111,9 @@ class CashFlowSensitivity extends Component {
             solutionApply={this.solutionApply}
             solutionSliderValue={this.solutionSliderValue}
           ></SolutionTmp>
-        </div>
-        <div id="test-swipe-4" className="col s12">
-          <Solution></Solution>
+          <div className="card">
+            <Solution></Solution>
+          </div>
         </div>
       </div>
     );

@@ -14,8 +14,8 @@ class Solution extends Component {
   render() {
     return (
       <div className="row">
-        <div className="col s4">
-          <h5>แนวทางแก้ไข</h5>
+        <div className="col s12">
+          <h6> เพิ่มแนวทางแก้ไข</h6>
           <ul className="">
             <SolutionList
               name={"นำจ่ายรายได้แผ่นดิน"}

@@ -99,7 +99,7 @@ class SolutionList extends Component {
         {/* 1st list */}
         <div>
           {/* 1.Header */}
-          <div className="col s12 pull-s2">
+          <div className="col s12">
             <label>
               <input
                 type="checkbox"
@@ -115,30 +115,20 @@ class SolutionList extends Component {
             <div className="col s12">
               <div className="col s2">{/* <span>เพิ่ม</span> */}</div>
               <div className="col s5">
-                <span>จำนวนเงิน ลบ.</span>
+                <span>ชำระในเดือน</span>
               </div>
               <div className="col s5">
-                <span>ชำระในเดือน</span>
+                <span>จำนวนเงิน ลบ.</span>
               </div>
             </div>
             {/* 1.1 */}
             <div className="col s12">
               <div className="row">
-                <div className="col s2">
+                <div className="col s2 push-s1">
                   <p>1.</p>
                 </div>
-                <div className="col s5 center">
-                  <div className="col s10">
-                    <input
-                      id={"solutionAmount1" + this.props.id}
-                      type="number"
-                      className="validate"
-                      onChange={this.handleInputChange}
-                    ></input>
-                  </div>
-                </div>
                 <div className="col s5">
-                  <div className="col s10">
+                  <div className="col s12">
                     <DatePicker
                       id={"date1" + this.props.id}
                       selected={this.state.date1}
@@ -149,26 +139,26 @@ class SolutionList extends Component {
                     />
                   </div>
                 </div>
-              </div>
-            </div>
-            {/* 1.2 */}
-            <div className="col s12">
-              <div className="row">
-                <div className="col s2">
-                  <p>2.</p>
-                </div>
                 <div className="col s5 center">
-                  <div className="col s10">
+                  <div className="col s11">
                     <input
-                      id="solutionAmount2"
+                      id={"solutionAmount1" + this.props.id}
                       type="number"
                       className="validate"
                       onChange={this.handleInputChange}
                     ></input>
                   </div>
                 </div>
+              </div>
+            </div>
+            {/* 1.2 */}
+            <div className="col s12">
+              <div className="row">
+                <div className="col s2 push-s1">
+                  <p>2.</p>
+                </div>
                 <div className="col s5">
-                  <div className="col s10">
+                  <div className="col s12">
                     <DatePicker
                       id={"date2" + this.props.id}
                       selected={this.state.date2}
@@ -177,6 +167,16 @@ class SolutionList extends Component {
                       showMonthYearPicker
                       showFullMonthYearPicker
                     />
+                  </div>
+                </div>
+                <div className="col s5 center">
+                  <div className="col s11">
+                    <input
+                      id="solutionAmount2"
+                      type="number"
+                      className="validate"
+                      onChange={this.handleInputChange}
+                    ></input>
                   </div>
                 </div>
               </div>
