@@ -79,13 +79,13 @@ class Dashboard extends Component {
               <div className="col s12">
                 <ul className="tabs">
                   <li className="tab col s6 m4">
-                    <a href="#netRev">เงินหมุนเวียนคงเหลือรายเดือน</a>
+                    <Link to="#netRev">เงินหมุนเวียนคงเหลือรายเดือน</Link>
                   </li>
                   <li className="tab col s6 m4">
-                    <a href="#daylychart">เงินหมุนเวียนคงเหลือรายวัน</a>
+                    <Link to="#daylychart">เงินหมุนเวียนคงเหลือรายวัน</Link>
                   </li>
                   <li className="tab col s6 m4">
-                    <a href="#breakdown">รายละเอียดรายรับ-จ่าย</a>
+                    <Link to="#breakdown">รายละเอียดรายรับ-จ่าย</Link>
                   </li>
                 </ul>
               </div>

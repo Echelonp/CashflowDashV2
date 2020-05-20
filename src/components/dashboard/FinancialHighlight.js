@@ -20,9 +20,9 @@ const UnitValue = styled.span`
 const Layout = styled.div`
   color: black;
   /* border: 2px solid grey; */
-  margin-top: 20px;
-  margin-bottom: 30px;
-  padding: 6px 12px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  padding: 6px 6px;
   /* display: inline-block; */
   border-radius: 10px;
   background-color: #f5f5f5;

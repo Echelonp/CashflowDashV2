@@ -1078,7 +1078,7 @@ class DayChart extends Component {
     };
 
     return (
-      <div className="">
+      <div>
         <CanvasJSChart
           options={options}
           /* onRef={ref => this.chart = ref} */
