@@ -99,7 +99,7 @@ class SolutionList extends Component {
         {/* 1st list */}
         <div>
           {/* 1.Header */}
-          <div className="col s12 pull-s1">
+          <div className="col s12">
             <label>
               <input
                 type="checkbox"

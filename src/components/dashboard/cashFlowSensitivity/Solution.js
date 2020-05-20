@@ -15,7 +15,10 @@ class Solution extends Component {
     return (
       <div className="row">
         <div className="col s12">
-          <h6> เพิ่มแนวทางแก้ไข</h6>
+          <div className="col s12 pull-s2">
+            <h6> เพิ่มแนวทางแก้ไข</h6>
+          </div>
+
           <ul className="">
             <SolutionList
               name={"นำจ่ายรายได้แผ่นดิน"}
