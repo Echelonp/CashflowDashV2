@@ -86,15 +86,45 @@ export const cashToDatapointsForCombiChart = (
   let datapointsCashExpenseMonthTotal = [];
   let datapointsNetMonthTotal = [];
   let datapointsNetMonthTotalOnlyBase = [];
+  let monthColor1 = [
+    "#35cdd9",
+    "#35cdd9",
+    "#35cdd9",
+    "#35cdd9",
+    "#35cdd9",
+    "#b9eef2",
+    "#b9eef2",
+    "#b9eef2",
+    "#b9eef2",
+    "#b9eef2",
+    "#b9eef2",
+    "#b9eef2",
+  ];
+  let monthColor2 = [
+    "#f63f86",
+    "#f63f86",
+    "#f63f86",
+    "#f63f86",
+    "#f63f86",
+    "#fbafcd",
+    "#fbafcd",
+    "#fbafcd",
+    "#fbafcd",
+    "#fbafcd",
+    "#fbafcd",
+    "#fbafcd",
+  ];
 
   for (let i = 0; i < 12; i++) {
     if (i < cashNetMonthTotal.length) {
       datapointsCashIncomeMonthTotal.push({
         label: monthsShort[i],
+        color: monthColor1[i],
         y: cashIncomeMonthTotal[i]["value"],
       });
       datapointsCashExpenseMonthTotal.push({
         label: monthsShort[i],
+        color: monthColor2[i],
         y: -1 * cashExpenseMonthTotal[i]["value"],
       });
       datapointsNetMonthTotal.push({
