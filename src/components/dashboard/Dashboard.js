@@ -67,13 +67,11 @@ class Dashboard extends Component {
     );
     // console.log("datapointIncomeStackColumn", datapointIncomeStackColumn);
     // console.log("datapointExpenseStackColumn", datapointExpenseStackColumn);
-
     return (
       <div>
         <div className="row">
           <div className="section col s12 m9">
             <FinancialHighlight></FinancialHighlight>
-
             {/* Insert TAP */}
             <div className="row">
               <div className="col s12">
@@ -123,8 +121,8 @@ class Dashboard extends Component {
             </div>
           </div>
         </div>
-
-        {/* <RevCashStackedBarChart></RevCashStackedBarChart> */}
+        {/* Test zone */}
+        <div>{/* Test */}</div>
       </div>
     );
   }
