@@ -99,7 +99,7 @@ class SolutionList extends Component {
         {/* 1st list */}
         <div>
           {/* 1.Header */}
-          <div className="col s12">
+          <div className="col s12 pull-s1">
             <label>
               <input
                 type="checkbox"
@@ -107,7 +107,12 @@ class SolutionList extends Component {
                 className="filled-in"
                 onChange={this.handleChecked}
               ></input>
-              <span>{this.props.name}</span>
+              <span
+                className="grey-text text-darken-3"
+                style={{ fontSize: "16px" }}
+              >
+                {this.props.name}
+              </span>
             </label>
           </div>
 

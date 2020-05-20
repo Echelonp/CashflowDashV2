@@ -86,7 +86,7 @@ class CashFlowSensitivity extends Component {
   };
 
   render() {
-    console.log("Props : ", this.props);
+    // console.log("Props : ", this.props);
     return (
       <div className="col s12">
         <ul id="tabs-swipe-demo" className="tabs">
