@@ -61,14 +61,14 @@ function FinancialHighLight(props) {
     props.data[2]["datapointsNetMonthTotal"][dateTest.getMonth()]["y"];
   const cashInit = cashBalance - cashNet;
 
-  console.log("cashNet", cashNet);
-  console.log("cashbalance", cashBalance);
-  console.log("cashInit", cashInit);
+  // console.log("cashNet", cashNet);
+  // console.log("cashbalance", cashBalance);
+  // console.log("cashInit", cashInit);
   // Number((6.688689).toFixed(1));
-  console.log(
-    "Devision Test",
-    Number((cashIncome * dateTest.getDate()) / 30).toFixed(1)
-  );
+  // console.log(
+  //   "Devision Test",
+  //   Number((cashIncome * dateTest.getDate()) / 30).toFixed(1)
+  // );
 
   return (
     <div>
