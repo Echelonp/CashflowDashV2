@@ -60,7 +60,7 @@ class NetCashChart extends Component {
       title: {
         text: "เงินหมุนเวียนคงเหลือปลายงวดรายเดือน",
         fontFamily: "verdana",
-        fontSize: 25,
+        fontSize: 22,
       },
       axisX: {
         valueFormatString: "MMMM",

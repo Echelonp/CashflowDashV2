@@ -41,7 +41,7 @@ class DayChart extends Component {
       title: {
         text: "เงินหมุนเวียนคงเหลือรายวัน",
         fontFamily: "verdana",
-        fontSize: 25,
+        fontSize: 22,
       },
       axisX: {
         valueFormatString: "MMMM",
@@ -829,6 +829,7 @@ class DayChart extends Component {
         {
           type: "spline",
           name: "เงินสดคงเหลือสุทธิ(คาดการณ์)",
+          yValueFormatString: "MB#,##0",
           showInLegend: true,
           dataPoints: [
             { y: null, label: "	2 Jan 63	" },

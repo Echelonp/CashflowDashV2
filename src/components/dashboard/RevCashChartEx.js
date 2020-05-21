@@ -45,7 +45,7 @@ class RevCashChartEx extends Component {
       title: {
         text: this.props.graph_name,
         fontFamily: "verdana",
-        fontSize: 25,
+        fontSize: 18,
       },
       axisX: {
         valueFormatString: "MMMM",

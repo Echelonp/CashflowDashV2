@@ -21,14 +21,13 @@ const UnitValue = styled.span`
 `;
 const Layout = styled.div`
   color: #0277bd;
-  background-color: lightblue;
   /* border: 2px solid grey; */
   margin-top: 5px;
   margin-bottom: 5px;
   padding: 6px 6px;
   /* display: inline-block; */
   border-radius: 10px;
-  background-color: #f5f5f5;
+  background-color: #ffffff;
 `;
 const PercentPlus = styled.span`
   font-size: 14px;

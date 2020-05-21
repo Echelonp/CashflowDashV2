@@ -10,12 +10,18 @@ import FinancialHighlight from "./FinancialHighlight";
 import HeaderMe from "./Header";
 import CashFlowSensitivity from "./cashFlowSensitivity/CashFlowSensitivity";
 import Table from "./Table";
+import styled from "styled-components";
 
 // fn
 import {
   cashToDatapointsForCombiChart,
   cashToDatapointForStackedColumn,
 } from "../../functions/DashboardFN";
+
+//CSS
+const DashboardCss = styled.div`
+  background-color: #f5f5f5;
+`;
 
 class Dashboard extends Component {
   render() {
@@ -73,7 +79,7 @@ class Dashboard extends Component {
     // console.log("datapointIncomeStackColumn", datapointIncomeStackColumn);
     // console.log("datapointExpenseStackColumn", datapointExpenseStackColumn);
     return (
-      <div>
+      <DashboardCss>
         <div className="row">
           <div className="section col s12 m9">
             <HeaderMe></HeaderMe>
@@ -126,13 +132,13 @@ class Dashboard extends Component {
                   <div className="col s12 m6">
                     <Table
                       data={newCashIncome}
-                      nameChart="รายรับประจำเดือน"
+                      nameChart="เงินรับประจำเดือน"
                     ></Table>
                   </div>
                   <div className="col s12 m6">
                     <Table
                       data={newCashExpense}
-                      nameChart="รายจ่ายประจำเดือน"
+                      nameChart="เงินจ่ายประจำเดือน"
                     ></Table>
                   </div>
                 </div>
@@ -146,7 +152,7 @@ class Dashboard extends Component {
             </div>
           </div>
         </div>
-      </div>
+      </DashboardCss>
     );
   }
 }
