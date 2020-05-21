@@ -64,7 +64,7 @@ class NetCashChart extends Component {
       },
       axisX: {
         valueFormatString: "MMMM",
-        labelFontSize: 20,
+        labelFontSize: 18,
         labelFontColor: "#1565c0",
       },
       axisY: {
