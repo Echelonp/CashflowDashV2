@@ -16,6 +16,21 @@ const Icontag = styled.div`
 `;
 
 function HeaderMe(props) {
+  const dateTest = new Date();
+  const monthList = [
+    "มกราคม",
+    "กุมภาพันธ์",
+    "มีนาคม",
+    "เมษายน",
+    "พฤษภาคม",
+    "มิถุนายน",
+    "กรกฏาคม",
+    "สิงหาคม",
+    "กันยายน",
+    "ตุลาคม",
+    "พฤศจิกายน",
+    "ธันวาคม",
+  ];
   return (
     <div className="col s12">
       <div className="col s12 m6">
@@ -23,7 +38,13 @@ function HeaderMe(props) {
           <Ptag>กระแสเงินสด</Ptag>
         </div>
         <div className="col s12 pull-s1">
-          <span>ข้อมูลกระแสเงินสด ณ วันที่: 21 พฤษภาคม 2563</span>
+          <span>
+            ข้อมูลกระแสเงินสด ณ วันที่: {dateTest.getDate()}{" "}
+            {" " +
+              monthList[dateTest.getMonth()] +
+              " " +
+              dateTest.getFullYear()}{" "}
+          </span>
         </div>
       </div>
       <div className="col s12 m6">
