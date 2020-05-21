@@ -10,12 +10,12 @@ const Ptag = styled.p`
   margin-top: 2px;
 `;
 const HighlightValue = styled.span`
-  font-size: 25px;
+  font-size: 22px;
   color: #212121;
   /* float: left; */
 `;
 const UnitValue = styled.span`
-  font-size: 14px;
+  font-size: 12px;
   color: #9e9e9e;
   /* float: right; */
 `;
