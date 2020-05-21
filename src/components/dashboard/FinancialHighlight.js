@@ -40,7 +40,7 @@ const PercentMinus = styled.span`
 `;
 
 function FinancialHighLight(props) {
-  console.log(props.data);
+  // console.log(props.data);
   const dateTest = new Date();
   // console.log(
   //   props.data[0]["datapointsCashIncomeMonthTotal"][dateTest.getMonth()]["y"]

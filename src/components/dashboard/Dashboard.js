@@ -52,7 +52,7 @@ class Dashboard extends Component {
           return -1;
         }
       });
-    console.log("newCashExpense", newCashExpense);
+    // console.log("newCashExpense", newCashExpense);
 
     const datapointForCombiChart = cashToDatapointsForCombiChart(
       newCashIncome,

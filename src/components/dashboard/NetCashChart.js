@@ -68,16 +68,16 @@ class NetCashChart extends Component {
       axisY: {
         prefix: "ลบ.",
         labelFormatter: this.addSymbols,
-        stripLines:[
-          {                
-            value:5000,
-            label : "Minimun Cashflow",                
-            labelFontStyle:"italic",   
-            labelPlacement:"outside", 
-            showOnTop: true
-          }
-          ]                    
+        stripLines: [
+          {
+            value: 5000,
+            label: "Minimun Cashflow",
+            labelFontStyle: "italic",
+            labelPlacement: "outside",
+            showOnTop: true,
           },
+        ],
+      },
       toolTip: {
         shared: true,
       },
@@ -137,7 +137,6 @@ class NetCashChart extends Component {
   }
 }
 
-
 // function updateChart() {
 // 	var boilerColor, deltaY, yVal;
 // 	var dps = chart.options.data[0].dataPoints;
@@ -147,7 +146,7 @@ class NetCashChart extends Component {
 // 		monthColor1 = datapoint1.x > month ? "#35cdd9" : yVal <= 170 ? "#b9eef2" : null;
 // 		dps[i] = {label: "Boiler "+(i+1) , y: yVal, color: boilerColor};
 // 	}
-// 	chart.options.data[0].dataPoints = dps; 
+// 	chart.options.data[0].dataPoints = dps;
 // 	chart.render();
 // };
 // updateChart();

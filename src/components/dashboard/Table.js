@@ -14,7 +14,7 @@ const Table = (props) => {
     return (
       <tr key={data.id}>
         <td>{data.name}</td>
-        <td>{data.cash["May"]}</td>
+        <td>{data.cash["May"].toLocaleString()}</td>
       </tr>
     );
   });
