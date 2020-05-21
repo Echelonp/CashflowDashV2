@@ -45,6 +45,8 @@ class DayChart extends Component {
       },
       axisX: {
         valueFormatString: "MMMM",
+        labelFontColor: "#d81b60",
+        labelFontSize: 15,
       },
       axisY: {
         prefix: "ลบ.",

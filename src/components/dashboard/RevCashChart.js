@@ -47,6 +47,11 @@ class RevCashChart extends Component {
         fontFamily: "verdana",
         fontSize: 25,
       },
+      axisX: {
+        valueFormatString: "MMMM",
+        labelFontSize: 18,
+        labelFontColor: "#d81b60",
+      },
       axisY: {
         // title: "Million Bath",
         prefix: "ลบ.",
