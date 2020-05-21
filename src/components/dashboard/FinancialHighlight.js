@@ -45,11 +45,11 @@ function FinancialHighLight(props) {
   // console.log(
   //   props.data[0]["datapointsCashIncomeMonthTotal"][dateTest.getMonth()]["y"]
   // );
-  console.log(
-    props.data[1]["datapointsCashExpenseMonthTotal"][dateTest.getMonth()]["y"]
-  );
-  console.log("DateDay", dateTest.getDate() * 2);
-  console.log("DateMonth", dateTest.getMonth());
+  // console.log(
+  //   props.data[1]["datapointsCashExpenseMonthTotal"][dateTest.getMonth()]["y"]
+  // );
+  // console.log("DateDay", dateTest.getDate() * 2);
+  // console.log("DateMonth", dateTest.getMonth());
 
   // This day
   const cashIncome =
@@ -61,7 +61,7 @@ function FinancialHighLight(props) {
     props.data[2]["datapointsNetMonthTotal"][dateTest.getMonth()]["y"];
   const cashInit = cashBalance - cashNet;
 
-  // console.log("cashNet", cashNet);
+  console.log("cashNet", cashNet.toLocaleString());
   // console.log("cashbalance", cashBalance);
   // console.log("cashInit", cashInit);
   // Number((6.688689).toFixed(1));
@@ -76,7 +76,7 @@ function FinancialHighLight(props) {
         <Layout>
           <Ptag>ยอดคงเหลือ</Ptag>
           <HighlightValue>
-            {Number((cashBalance * dateTest.getDate()) / 30).toFixed(1)}
+            {((cashBalance * dateTest.getDate()) / 30).toLocaleString()}
           </HighlightValue>
           <UnitValue> ล้านบาท</UnitValue>
           <div>
@@ -92,7 +92,7 @@ function FinancialHighLight(props) {
         <Layout>
           <Ptag>ผลต่าง รับ-จ่าย</Ptag>
           <HighlightValue>
-            {Number((cashNet * dateTest.getDate()) / 30).toFixed(1)}
+            {((cashNet * dateTest.getDate()) / 30).toLocaleString()}
           </HighlightValue>
           <UnitValue> ล้านบาท</UnitValue>
           <div>
@@ -107,7 +107,7 @@ function FinancialHighLight(props) {
         <Layout>
           <Ptag>รวมเงินรับ</Ptag>
           <HighlightValue>
-            {Number((cashIncome * dateTest.getDate()) / 30).toFixed(1)}
+            {((cashIncome * dateTest.getDate()) / 30).toLocaleString()}
           </HighlightValue>
           <UnitValue> ล้านบาท</UnitValue>
           <div>
@@ -122,7 +122,7 @@ function FinancialHighLight(props) {
         <Layout>
           <Ptag>รวมเงินจ่าย</Ptag>
           <HighlightValue>
-            {-1 * Number((cashExpense * dateTest.getDate()) / 30).toFixed(1)}
+            {((-1 * (cashExpense * dateTest.getDate())) / 30).toLocaleString()}
           </HighlightValue>
           <UnitValue> ล้านบาท</UnitValue>
           <div>
