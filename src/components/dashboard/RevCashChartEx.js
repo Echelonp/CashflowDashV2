@@ -1,6 +1,8 @@
 import CanvasJSReact from "../canvasjs-2.3.2/canvasjs.react";
 import React, { Component } from "react";
 
+// I created this component same as RevCashChart because I need the graph of revIn and revEx
+// show in difference color set, so the only different parameter is "colorset"
 let CanvasJSChart = CanvasJSReact.CanvasJSChart;
 class RevCashChartEx extends Component {
   constructor() {

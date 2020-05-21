@@ -23,13 +23,14 @@ const ThCss2 = styled.th`
 const TabledataCss1 = styled.td`
   color: #4a4a4a;
   text-align: left;
-  font-size: 16px;
+  font-size: 18px;
   /* font-weight: 1500; */
 `;
 const TabledataCss2 = styled.td`
   color: #4a4a4a;
   text-align: right;
   font-size: 18px;
+  font-weight: 700;
   /* font-weight: 1500; */
 `;
 
