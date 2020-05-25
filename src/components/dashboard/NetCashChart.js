@@ -57,9 +57,10 @@ class NetCashChart extends Component {
       panEnabled: true,
       theme: "Light2",
       dataPointMaxWidth: 90,
+      fontFamily: "KanitRegular",
       title: {
         text: "เงินหมุนเวียนคงเหลือปลายงวดรายเดือน",
-        fontFamily: "verdana",
+        fontFamily: "KanitRegular",
         fontSize: 22,
       },
       axisX: {

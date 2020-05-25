@@ -38,9 +38,10 @@ class DayChart extends Component {
       exportEnabled: true,
       zoomEnabled: true,
       panEnabled: true,
+      fontFamily: "KanitRegular",
       title: {
         text: "เงินหมุนเวียนคงเหลือรายวัน",
-        fontFamily: "verdana",
+        fontFamily: "KanitRegular",
         fontSize: 22,
       },
       axisX: {

@@ -58,9 +58,8 @@ function FinancialHighLight(props) {
   const cashNet = cashIncome + cashExpense;
   const cashBalance =
     props.data[2]["datapointsNetMonthTotal"][dateTest.getMonth()]["y"];
-  const cashInit = cashBalance - cashNet;
 
-  console.log("cashNet", cashNet.toLocaleString());
+  // console.log("cashNet", cashNet.toLocaleString());
   // console.log("cashbalance", cashBalance);
   // console.log("cashInit", cashInit);
   // Number((6.688689).toFixed(1));

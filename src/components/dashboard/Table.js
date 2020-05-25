@@ -57,7 +57,7 @@ const Table = (props) => {
       <table className="striped responsive-table">
         <TableHeadCss>
           <tr>
-            <ThCss1>{props.nameChart + " พ.ค. 2563"}</ThCss1>
+            <ThCss1>{props.nameChart + "ปัจจุบัน"}</ThCss1>
             <ThCss2>ล้านบาท</ThCss2>
           </tr>
         </TableHeadCss>
