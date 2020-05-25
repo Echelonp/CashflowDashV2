@@ -57,10 +57,10 @@ class NetCashChart extends Component {
       panEnabled: true,
       theme: "Light2",
       dataPointMaxWidth: 90,
-      fontFamily: "KanitRegular",
+      fontFamily: "Kanit",
       title: {
         text: "เงินหมุนเวียนคงเหลือปลายงวดรายเดือน",
-        fontFamily: "KanitRegular",
+        fontFamily: "Kanit",
         fontSize: 22,
       },
       axisX: {
@@ -90,6 +90,7 @@ class NetCashChart extends Component {
         cursor: "pointer",
         itemclick: this.toggleDataSeries,
         verticalAlign: "top",
+        fontFamily: "Kanit",
       },
       data: [
         {
@@ -97,6 +98,7 @@ class NetCashChart extends Component {
           name: "เงินรับรวม",
           showInLegend: true,
           yValueFormatString: "MB#,##0",
+          fontFamily: "Kanit",
           dataPoints: datapoint1,
         },
         {
@@ -104,6 +106,7 @@ class NetCashChart extends Component {
           name: "เงินจ่ายรวม",
           showInLegend: true,
           xValueFormatString: "MMMM YYYY",
+          fontFamily: "Kanit",
           yValueFormatString: "MB#,##0",
           dataPoints: datapoint2,
         },

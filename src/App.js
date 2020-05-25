@@ -9,10 +9,14 @@ import DayChart from "./components/dashboard/DayChart";
 import Solution from "./components/dashboard/cashFlowSensitivity/Solution";
 import Table from "./components/dashboard/Table";
 
+const styles = {
+  fontFamily: "Kanit",
+};
+
 function App() {
   return (
     <BrowserRouter>
-      <div className="App">
+      <div className="App" styles={styles}>
         {/* <Navbar></Navbar> */}
         <Switch>
           <Route exact path="/" component={Dashboard}></Route>

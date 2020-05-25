@@ -44,7 +44,7 @@ class RevCashChart extends Component {
 
       title: {
         text: this.props.graph_name,
-        fontFamily: "verdana",
+        fontFamily: "Kanit",
         fontSize: 18,
       },
       axisX: {
@@ -66,6 +66,7 @@ class RevCashChart extends Component {
         horizontalAlign: "center",
         reversed: false,
         cursor: "pointer",
+        fontFamily: "Kanit",
         itemclick: this.toggleDataSeries,
       },
       data: data,
